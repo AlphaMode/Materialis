@@ -2,14 +2,14 @@ package com.rcx.materialis.modifiers;
 
 import javax.annotation.Nullable;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraftforge.fml.ModList;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 public class PsishieldModifier extends Modifier {
 
-	boolean enabled = ModList.get().isLoaded("psi");
+	boolean enabled = FabricLoader.getInstance().isModLoaded("psi");
 
 	@Override
 	public int getPriority() {

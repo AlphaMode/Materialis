@@ -9,16 +9,16 @@ import com.rcx.materialis.Materialis;
 import com.rcx.materialis.MaterialisResources;
 import com.rcx.materialis.MaterialisResources.IngotWithBlockNNugget;
 
-import net.minecraft.data.loot.BlockLoot;
+import io.github.fabricators_of_create.porting_lib.data.ModdedBlockLoot;
+import net.minecraft.core.Registry;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.registries.ForgeRegistries;
 
-public class MaterialisBlockLootTables extends BlockLoot {
+public class MaterialisBlockLootTables extends ModdedBlockLoot {
 
 	@Nonnull
 	@Override
 	protected Iterable<Block> getKnownBlocks() {
-		return ForgeRegistries.BLOCKS.getValues().stream()
+		return Registry.BLOCK.stream()
 				.filter((block) -> Materialis.modID.equals(Objects.requireNonNull(block.getRegistryName()).getNamespace()))
 				.collect(Collectors.toList());
 	}

@@ -4,12 +4,12 @@ import java.util.List;
 
 import com.rcx.materialis.Materialis;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraftforge.fml.ModList;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.recipe.tinkerstation.ValidatedResult;
 import slimeknights.tconstruct.library.tools.context.ToolRebuildContext;
@@ -22,7 +22,7 @@ import slimeknights.tconstruct.library.utils.Util;
 
 public class SpellSocketModifier extends Modifier {
 
-	public static boolean enabled = ModList.get().isLoaded("psi");
+	public static boolean enabled = FabricLoader.getInstance().isModLoaded("psi");
 	public static final ResourceLocation SOCKET_OWNER = new ResourceLocation(Materialis.modID, "socket_owner");
 	public static final ValidatedResult SLOT_NOT_EMPTY = ValidatedResult.failure(Util.makeTranslationKey("recipe", new ResourceLocation(Materialis.modID, "remove_modifier.spell_slot_not_empty")));
 	public static final ValidatedResult TOO_MANY_SLOTS = ValidatedResult.failure(Util.makeTranslationKey("recipe", new ResourceLocation(Materialis.modID, "add_modifier.too_many_spell_slots")));

@@ -2,19 +2,19 @@ package com.rcx.materialis.modifiers;
 
 import java.util.List;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
-import net.minecraftforge.fml.ModList;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.modifiers.impl.SingleLevelModifier;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 public class ReapingModifier extends SingleLevelModifier {
 
-	boolean enabled = ModList.get().isLoaded("eidolon");
+	boolean enabled = FabricLoader.getInstance().isModLoaded("eidolon");
 
 	@Override
 	public int getPriority() {

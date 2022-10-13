@@ -2,11 +2,11 @@ package com.rcx.materialis.modifiers;
 
 import java.util.List;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraftforge.fml.ModList;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
@@ -18,7 +18,7 @@ import vazkii.botania.api.mana.ManaItemHandler;
 
 public class ManaripperModifier extends Modifier {
 
-	boolean enabled = ModList.get().isLoaded("botania");
+	boolean enabled = FabricLoader.getInstance().isModLoaded("botania");
 	private static final int MANA_COST = 80;
 
 	@Override

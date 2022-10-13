@@ -8,10 +8,10 @@ import com.rcx.materialis.MaterialisResources.FluidWithBlockNBucket;
 import com.rcx.materialis.MaterialisResources.IngotWithBlockNNugget;
 import com.rcx.materialis.util.TinkerToolFluxed;
 
+import io.github.fabricators_of_create.porting_lib.data.LanguageProvider;
+import io.github.fabricators_of_create.porting_lib.util.SimpleFlowableFluid;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.common.data.LanguageProvider;
-import net.minecraftforge.fluids.ForgeFlowingFluid;
 import slimeknights.tconstruct.common.registration.CastItemObject;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.modifiers.Modifier;
@@ -371,7 +371,7 @@ public class MaterialisLang extends LanguageProvider {
 		add("recipe.materialis.modifier.reactive_requirements", "Reactive requires a different recipe for every level");
 	}
 
-	public void addFluid(Supplier<? extends ForgeFlowingFluid> key, String name) {
+	public void addFluid(Supplier<? extends SimpleFlowableFluid> key, String name) {
 		ResourceLocation id = key.get().getRegistryName();
 		add("fluid." + id.getNamespace() + "." + id.getPath(), name);
 	}

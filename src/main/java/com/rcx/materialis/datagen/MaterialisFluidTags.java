@@ -3,28 +3,26 @@ package com.rcx.materialis.datagen;
 import com.rcx.materialis.Materialis;
 import com.rcx.materialis.MaterialisResources;
 import com.rcx.materialis.MaterialisResources.FluidWithBlockNBucket;
-
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.FluidTagsProvider;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.material.Fluid;
-import net.minecraftforge.common.data.ExistingFileHelper;
 import slimeknights.tconstruct.common.TinkerTags;
 
-public class MaterialisFluidTags extends FluidTagsProvider {
+public class MaterialisFluidTags extends FabricTagProvider.FluidTagProvider {
 
-	public static final TagKey<Fluid> LIQUID_PINK_SLIME = FluidTags.create(new ResourceLocation(Materialis.modID, "pink_slime"));
-	public static final TagKey<Fluid> VIRULENT_MIX = FluidTags.create(new ResourceLocation(Materialis.modID, "virulent_mix"));
-	public static final TagKey<Fluid> LIQUID_STARLIGHT = FluidTags.create(new ResourceLocation(Materialis.modID, "liquid_starlight"));
+	public static final TagKey<Fluid> LIQUID_PINK_SLIME = TagKey.create(Registry.FLUID_REGISTRY, new ResourceLocation(Materialis.modID, "pink_slime"));
+	public static final TagKey<Fluid> VIRULENT_MIX = TagKey.create(Registry.FLUID_REGISTRY, new ResourceLocation(Materialis.modID, "virulent_mix"));
+	public static final TagKey<Fluid> LIQUID_STARLIGHT = TagKey.create(Registry.FLUID_REGISTRY, new ResourceLocation(Materialis.modID, "liquid_starlight"));
 
-	public MaterialisFluidTags(DataGenerator gen, ExistingFileHelper existingFileHelper) {
-		super(gen, Materialis.modID, existingFileHelper);
+	public MaterialisFluidTags(FabricDataGenerator gen) {
+		super(gen);
 	}
 
 	@Override
-	public void addTags() {
+	public void generateTags() {
 		for (FluidWithBlockNBucket fluid : MaterialisResources.fluidList) {
 			tag(fluid.OBJECT.getLocalTag()).add(fluid.FLUID.get());
 			tag(fluid.OBJECT.getForgeTag()).add(fluid.FLUID.get());

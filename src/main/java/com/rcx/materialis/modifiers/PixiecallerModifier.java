@@ -2,18 +2,18 @@ package com.rcx.materialis.modifiers;
 
 import java.util.function.BiConsumer;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlot.Type;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraftforge.fml.ModList;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import vazkii.botania.common.handler.PixieHandler;
 
 public class PixiecallerModifier extends Modifier {
 
-	boolean enabled = ModList.get().isLoaded("botania");
+	boolean enabled = FabricLoader.getInstance().isModLoaded("botania");
 
 	@Override
 	public void addAttributes(IToolStackView tool, int level, EquipmentSlot slot, BiConsumer<Attribute, AttributeModifier> consumer) {

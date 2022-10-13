@@ -4,10 +4,10 @@ import javax.annotation.Nullable;
 
 import com.rcx.materialis.datagen.MaterialisModifiers;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.fml.ModList;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
@@ -15,7 +15,7 @@ import vazkii.botania.api.mana.ManaItemHandler;
 
 public class ManashieldModifier extends Modifier {
 
-	boolean enabled = ModList.get().isLoaded("botania");
+	boolean enabled = FabricLoader.getInstance().isModLoaded("botania");
 	private static final int MANA_PER_DAMAGE = 60;
 
 	@Override

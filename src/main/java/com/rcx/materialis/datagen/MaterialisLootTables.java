@@ -10,6 +10,7 @@ import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 import com.rcx.materialis.Materialis;
 
+import io.github.fabricators_of_create.porting_lib.data.ModdedLootTableProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.resources.ResourceLocation;
@@ -19,7 +20,7 @@ import net.minecraft.world.level.storage.loot.ValidationContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 
-public class MaterialisLootTables extends LootTableProvider {
+public class MaterialisLootTables extends ModdedLootTableProvider {
 
 	private final List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> lootTables = ImmutableList.of(Pair.of(MaterialisBlockLootTables::new, LootContextParamSets.BLOCK));
 

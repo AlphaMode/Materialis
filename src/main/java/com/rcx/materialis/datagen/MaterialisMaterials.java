@@ -2,13 +2,12 @@ package com.rcx.materialis.datagen;
 
 import com.rcx.materialis.Materialis;
 
+import net.fabricmc.fabric.api.resource.conditions.v1.DefaultResourceConditions;
+import net.minecraft.core.Registry;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Tiers;
-import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
-import net.minecraftforge.common.crafting.conditions.NotCondition;
-import net.minecraftforge.common.crafting.conditions.OrCondition;
-import net.minecraftforge.common.crafting.conditions.TagEmptyCondition;
 import slimeknights.tconstruct.common.json.ConfigEnabledCondition;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialStatsDataProvider;
@@ -107,7 +106,7 @@ public class MaterialisMaterials extends AbstractMaterialDataProvider {
 		addCompatMetalMaterial(nickel, 2, ORDER_HARVEST + ORDER_COMPAT);
 		addCompatMetalMaterial(uranium, 2, ORDER_HARVEST + ORDER_COMPAT);
 		//create materials
-		addMaterial(roseQuartz, 3, ORDER_NETHER + ORDER_COMPAT, true, false, new OrCondition(ConfigEnabledCondition.FORCE_INTEGRATION_MATERIALS, new NotCondition(new TagEmptyCondition(MaterialisItemTags.ROSE_QUARTZ_MATERIAL.location()))));
+		addMaterial(roseQuartz, 3, ORDER_NETHER + ORDER_COMPAT, true, false, DefaultResourceConditions.or(ConfigEnabledCondition.FORCE_INTEGRATION_MATERIALS, DefaultResourceConditions.itemTagsPopulated(MaterialisItemTags.ROSE_QUARTZ_MATERIAL)));
 		addCompatMetalMaterial(refinedRadiance, 4, ORDER_SPECIAL + ORDER_COMPAT);
 		addCompatMetalMaterial(shadowSteel, 4, ORDER_SPECIAL + ORDER_COMPAT);
 		//eidolon materials
@@ -120,7 +119,7 @@ public class MaterialisMaterials extends AbstractMaterialDataProvider {
 		//astral sorcery materials
 		addCompatMetalMaterial(starmetal, 3, ORDER_HARVEST + ORDER_COMPAT);
 		//industrial foregoing materials
-		addMaterial(plastic, 2, ORDER_HARVEST + ORDER_COMPAT, true, false, new OrCondition(ConfigEnabledCondition.FORCE_INTEGRATION_MATERIALS, new NotCondition(new TagEmptyCondition(MaterialisItemTags.PLASTIC_MATERIAL.location()))));
+		addMaterial(plastic, 2, ORDER_HARVEST + ORDER_COMPAT, true, false, DefaultResourceConditions.or(ConfigEnabledCondition.FORCE_INTEGRATION_MATERIALS, DefaultResourceConditions.itemTagsPopulated(MaterialisItemTags.PLASTIC_MATERIAL)));
 		addCompatMetalMaterial(pinkSlime, 3, ORDER_GENERAL + ORDER_COMPAT);
 		addMaterial(pinkSlimeball, 6, 9, true);
 		//undergarden materials
@@ -128,7 +127,7 @@ public class MaterialisMaterials extends AbstractMaterialDataProvider {
 		addCompatMetalMaterial(froststeel, 2, ORDER_WEAPON + ORDER_COMPAT);
 		addCompatMetalMaterial(utherium, 3, ORDER_WEAPON + ORDER_COMPAT);
 		addCompatMetalMaterial(regalium, 6, 9);
-		addMaterial(forgottenMetal, 3, ORDER_GENERAL + ORDER_COMPAT, false, false, new OrCondition(ConfigEnabledCondition.FORCE_INTEGRATION_MATERIALS, new NotCondition(new TagEmptyCondition("forge:ingots/forgotten_metal"))));
+		addMaterial(forgottenMetal, 3, ORDER_GENERAL + ORDER_COMPAT, false, false, DefaultResourceConditions.or(ConfigEnabledCondition.FORCE_INTEGRATION_MATERIALS, DefaultResourceConditions.itemTagsPopulated(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("c:ingots/forgotten_metal")))));
 		//mekanism materials
 		addCompatMetalMaterial(refinedObsidian, 3, ORDER_HARVEST + ORDER_COMPAT);
 		addCompatMetalMaterial(refinedGlowstone, 3, ORDER_WEAPON + ORDER_COMPAT);
@@ -139,8 +138,8 @@ public class MaterialisMaterials extends AbstractMaterialDataProvider {
 		//occultism materials
 		addCompatMetalMaterial(iesnium, 4, ORDER_HARVEST + ORDER_COMPAT);
 		//botania materials
-		addMaterial(livingwood, 1, ORDER_WEAPON + ORDER_COMPAT, true, false, new OrCondition(ConfigEnabledCondition.FORCE_INTEGRATION_MATERIALS, new ModLoadedCondition("botania")));
-		addMaterial(dreamwood, 2, ORDER_HARVEST + ORDER_COMPAT, true, false, new OrCondition(ConfigEnabledCondition.FORCE_INTEGRATION_MATERIALS, new ModLoadedCondition("botania")));
+		addMaterial(livingwood, 1, ORDER_WEAPON + ORDER_COMPAT, true, false, DefaultResourceConditions.or(ConfigEnabledCondition.FORCE_INTEGRATION_MATERIALS, DefaultResourceConditions.allModsLoaded("botania")));
+		addMaterial(dreamwood, 2, ORDER_HARVEST + ORDER_COMPAT, true, false, DefaultResourceConditions.or(ConfigEnabledCondition.FORCE_INTEGRATION_MATERIALS, DefaultResourceConditions.allModsLoaded("botania")));
 		addCompatMetalMaterial(manasteel, 2, ORDER_HARVEST + ORDER_COMPAT);
 		addCompatMetalMaterial(elementium, 3, ORDER_WEAPON + ORDER_COMPAT);
 		addCompatMetalMaterial(terrasteel, 4, ORDER_WEAPON + ORDER_COMPAT);

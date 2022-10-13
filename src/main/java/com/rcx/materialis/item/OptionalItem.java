@@ -4,21 +4,19 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.common.crafting.conditions.ICondition;
-import net.minecraftforge.common.crafting.conditions.ICondition.IContext;
 
 public class OptionalItem extends Item {
 
-	public ICondition condition;
+	public boolean hideTab;
 
-	public OptionalItem(Properties prop, ICondition condition) {
+	public OptionalItem(Properties prop, boolean hideTab) {
 		super(prop);
-		this.condition = condition;
+		this.hideTab = hideTab;
 	}
 
 	@Override
 	public void fillItemCategory(CreativeModeTab group, NonNullList<ItemStack> items) {
-		if (condition.test(IContext.EMPTY))
+		if (!hideTab)
 			super.fillItemCategory(group, items);
 	}
 }

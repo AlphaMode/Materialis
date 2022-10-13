@@ -1,30 +1,26 @@
 package com.rcx.materialis.util;
 
 import com.rcx.materialis.Materialis;
-
+import io.github.fabricators_of_create.porting_lib.util.EnvExecutor;
+import me.pepperbell.simplenetworking.SimpleChannel;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.fml.ModList;
-import net.minecraftforge.network.NetworkRegistry;
-import net.minecraftforge.network.simple.SimpleChannel;
 
 public class MaterialisPacketHandler {
-
-	private static final String PROTOCOL_VERSION = "1";
-	public static final SimpleChannel INSTANCE = NetworkRegistry.newSimpleChannel(
-			new ResourceLocation(Materialis.modID, "main"),
-			() -> PROTOCOL_VERSION,
-			PROTOCOL_VERSION::equals,
-			PROTOCOL_VERSION::equals
-			);
+	public static final SimpleChannel INSTANCE = new SimpleChannel(new ResourceLocation(Materialis.modID, "main"));
 
 	static int id = 0;
 
 	public static void init() {
-		if (ModList.get().isLoaded("botania")) {
-			INSTANCE.registerMessage(id++, PacketTerraBeam.class, PacketTerraBeam::encode, PacketTerraBeam::decode, PacketTerraBeam::handle);
-			INSTANCE.registerMessage(id++, PacketElvenBeam.class, PacketElvenBeam::encode, PacketElvenBeam::decode, PacketElvenBeam::handle);
+		if (FabricLoader.getInstance().isModLoaded("botania")) {
+			INSTANCE.registerC2SPacket(PacketTerraBeam.class, id++);
+			INSTANCE.registerC2SPacket(PacketElvenBeam.class, id++);
 		}
-		if (ModList.get().isLoaded("ars_nouveau"))
-			INSTANCE.registerMessage(id++, PacketReactiveSwing.class, PacketReactiveSwing::encode, PacketReactiveSwing::decode, PacketReactiveSwing::handle);
+		if (FabricLoader.getInstance().isModLoaded("ars_nouveau"))
+			INSTANCE.registerC2SPacket(PacketReactiveSwing.class, id++);
+
+		INSTANCE.initServerListener();
+		EnvExecutor.runWhenOn(EnvType.CLIENT, () -> INSTANCE::initClientListener);
 	}
 }

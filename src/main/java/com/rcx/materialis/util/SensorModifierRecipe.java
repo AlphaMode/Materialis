@@ -8,6 +8,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.gson.JsonObject;
 import com.rcx.materialis.MaterialisResources;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
@@ -15,7 +16,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraftforge.fml.ModList;
 import slimeknights.mantle.recipe.ingredient.SizedIngredient;
 import slimeknights.mantle.util.JsonHelper;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
@@ -31,7 +31,7 @@ import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 
 public class SensorModifierRecipe extends SwappableModifierRecipe {
 
-	boolean enabled = ModList.get().isLoaded("psi");
+	boolean enabled = FabricLoader.getInstance().isModLoaded("psi");
 
 	private final String value;
 

@@ -1,9 +1,9 @@
 package com.rcx.materialis.modifiers;
 
+import io.github.fabricators_of_create.porting_lib.event.common.PlayerBreakSpeedCallback;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraftforge.event.entity.player.PlayerEvent.BreakSpeed;
 import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.helper.ModifierUtil;
@@ -25,9 +25,9 @@ public class NeptunesBlessingModifier extends NoLevelsModifier {
 	}
 
 	@Override
-	public void onBreakSpeed(IToolStackView tool, int level, BreakSpeed event, Direction sideHit, boolean isEffective, float miningSpeedModifier) {
+	public void onBreakSpeed(IToolStackView tool, int level, PlayerBreakSpeedCallback.BreakSpeed event, Direction sideHit, boolean isEffective, float miningSpeedModifier) {
 		if (isEffective)
-			event.setNewSpeed(event.getNewSpeed() * negateWaterMiningModifier(event.getEntityLiving(), tool.getModifierLevel(TinkerModifiers.airborne.get()) == 0));
+			event.newSpeed = event.newSpeed * negateWaterMiningModifier(event.player, tool.getModifierLevel(TinkerModifiers.airborne.get()) == 0);
 	}
 
 	public static float negateWaterMiningModifier(LivingEntity entity, boolean negateSwimming) {

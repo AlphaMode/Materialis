@@ -1,8 +1,8 @@
 package com.rcx.materialis.util;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.fml.ModList;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.context.ToolHarvestContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
@@ -18,7 +18,7 @@ public class MaterialisUtil {
 		}
 	}
 
-	public static boolean psiLoaded = ModList.get().isLoaded("psi");
+	public static boolean psiLoaded = FabricLoader.getInstance().isModLoaded("psi");
 
 	public static void castOnBlockBreak(IToolStackView tool, int level, ToolHarvestContext context, boolean checkTag) {
 		/*if (psiLoaded && !tool.isBroken() && context.getPlayer() != null && !tool.getVolatileData().getBoolean(PsionizingRadiationModifier.SUPPRESS_TOOLCASTING)) {

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "materialis",
+  "version": "${version}",
+
+  "name": "Materialis",
+  "description": "Materialis is an addon for Tinkers Construct, it adds compatility for other mods.\n\nIt mostly adds new tool materials but other compatibility features are added as well.",
+  "authors": [
+    "RCXcrafter",
+    "AlphaMode"
+  ],
+  "contact": {
+    "sources": "https://github.com/AlphaMode/Materialis"
+  },
+
+  "license": "MIT",
+  "icon": "materialis_logo.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.rcx.materialis.Materialis"
+    ],
+    "client": [
+      "com.rcx.materialis.MaterialisClient"
+    ],
+    "fabric-datagen": [
+      "com.rcx.materialis.MaterialisData"
+    ],
+    "jei_mod_plugin": [
+      "com.rcx.materialis.compat.MaterialisJEIPlugin"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.12.12",
+    "fabric": ">=0.44.0",
+    "minecraft": ">=1.18.2"
+  }
+}

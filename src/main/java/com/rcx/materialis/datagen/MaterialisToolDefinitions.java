@@ -3,8 +3,8 @@ package com.rcx.materialis.datagen;
 import com.rcx.materialis.Materialis;
 import com.rcx.materialis.MaterialisResources;
 
+import io.github.fabricators_of_create.porting_lib.util.ToolActions;
 import net.minecraft.data.DataGenerator;
-import net.minecraftforge.common.ToolActions;
 import slimeknights.tconstruct.library.data.tinkering.AbstractToolDefinitionDataProvider;
 import slimeknights.tconstruct.library.tools.SlotType;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;

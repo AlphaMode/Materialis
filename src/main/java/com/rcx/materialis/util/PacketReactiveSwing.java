@@ -1,25 +1,24 @@
 package com.rcx.materialis.util;
 
-import java.util.function.Supplier;
-
 import com.rcx.materialis.datagen.MaterialisModifiers;
 
+import me.pepperbell.simplenetworking.C2SPacket;
+import me.pepperbell.simplenetworking.SimpleChannel;
+import net.fabricmc.fabric.api.networking.v1.PacketSender;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraftforge.network.NetworkEvent;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.network.ServerGamePacketListenerImpl;
 
+public class PacketReactiveSwing implements C2SPacket {
 
-public class PacketReactiveSwing {
+	public PacketReactiveSwing() {}
 
-	public static void encode(PacketReactiveSwing msg, FriendlyByteBuf buf) {}
+	public PacketReactiveSwing(FriendlyByteBuf buf) {}
 
-	public static PacketReactiveSwing decode(FriendlyByteBuf buf) {
-		return new PacketReactiveSwing();
-	}
+	public void encode(FriendlyByteBuf buf) {}
 
-	public static void handle(PacketReactiveSwing msg, Supplier<NetworkEvent.Context> ctx) {
-		if (ctx.get().getDirection().getReceptionSide().isServer()) {
-			ctx.get().enqueueWork(() -> MaterialisModifiers.reactiveModifier.get().recieveLeftClick(ctx.get().getSender()));
-		}
-		ctx.get().setPacketHandled(true);
+	public void handle(MinecraftServer server, ServerPlayer player, ServerGamePacketListenerImpl listener, PacketSender responseSender, SimpleChannel channel) {
+		server.execute(() -> MaterialisModifiers.reactiveModifier.get().recieveLeftClick(player));
 	}
 }

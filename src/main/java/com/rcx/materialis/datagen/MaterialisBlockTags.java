@@ -3,56 +3,55 @@ package com.rcx.materialis.datagen;
 import com.rcx.materialis.Materialis;
 import com.rcx.materialis.MaterialisResources;
 import com.rcx.materialis.MaterialisResources.IngotWithBlockNNugget;
-
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.BlockTagsProvider;
+import me.alphamode.forgetags.Tags;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.Tags;
-import net.minecraftforge.common.data.ExistingFileHelper;
 import slimeknights.tconstruct.common.TinkerTags;
 
-public class MaterialisBlockTags extends BlockTagsProvider {
+public class MaterialisBlockTags extends FabricTagProvider.BlockTagProvider {
 
-	public static final TagKey<Block> WRENCH_BLACKLIST = BlockTags.create(new ResourceLocation(Materialis.modID, "wrench_blacklist"));
-	public static final TagKey<Block> MINABLE_WITH_WRENCH = BlockTags.create(new ResourceLocation(Materialis.modID, "mineable/wrench"));
+	public static final TagKey<Block> WRENCH_BLACKLIST = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(Materialis.modID, "wrench_blacklist"));
+	public static final TagKey<Block> MINABLE_WITH_WRENCH = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(Materialis.modID, "mineable/wrench"));
 
 	//astral sorcery stuff
-	public static final TagKey<Block> STARMETAL_BLOCK = BlockTags.create(new ResourceLocation("forge", "storage_blocks/starmetal"));
-	public static final TagKey<Block> STARMETAL_ORE = BlockTags.create(new ResourceLocation("forge", "ores/starmetal"));
+	public static final TagKey<Block> STARMETAL_BLOCK = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation("c", "storage_blocks/starmetal"));
+	public static final TagKey<Block> STARMETAL_ORE = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation("c", "ores/starmetal"));
 
-	public MaterialisBlockTags(DataGenerator gen, ExistingFileHelper existingFileHelper) {
-		super(gen, Materialis.modID, existingFileHelper);
+	public MaterialisBlockTags(FabricDataGenerator gen) {
+		super(gen);
 	}
 
 	@Override
-	protected void addTags() {
+	protected void generateTags() {
 		for (IngotWithBlockNNugget material : MaterialisResources.materialList) {
-			addBlockTag(material.BLOCK.get(), BlockTags.create(new ResourceLocation("forge", "storage_blocks/" + material.name)));
+			addBlockTag(material.BLOCK.get(), TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation("c", "storage_blocks/" + material.name)));
 		}
-		tag(BlockTags.NEEDS_IRON_TOOL).addTag(BlockTags.create(new ResourceLocation("forge", "storage_blocks/fairy")));
+		tag(BlockTags.NEEDS_IRON_TOOL).addTag(TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation("c", "storage_blocks/fairy")));
 		
 		//wrench
-		tag(MINABLE_WITH_WRENCH)
-		.addOptionalTag(new ResourceLocation("forge", "mineable/wrench"))
-		.addOptionalTag(new ResourceLocation("forge", "mineable/hammer"))
-		.addTag(Tags.Blocks.STORAGE_BLOCKS)
-		.addTag(Tags.Blocks.BARRELS)
-		.addTag(Tags.Blocks.CHESTS)
-		.addTag(Tags.Blocks.GLASS)
-		.addTag(Tags.Blocks.GLASS_PANES)
-		.addTag(BlockTags.BUTTONS)
-		.addTag(BlockTags.DOORS)
-		.addTag(BlockTags.TRAPDOORS)
-		.addTag(BlockTags.PRESSURE_PLATES)
-		.addTag(BlockTags.BANNERS)
-		.addTag(BlockTags.ANVIL)
-		.addTag(BlockTags.RAILS)
-		.addTag(BlockTags.BEDS)
-		.addTag(BlockTags.SIGNS)
-		.addTag(BlockTags.BEACON_BASE_BLOCKS);
+		getOrCreateTagBuilder(MINABLE_WITH_WRENCH)
+		.addOptionalTag(new ResourceLocation("c", "mineable/wrench"))
+		.addOptionalTag(new ResourceLocation("c", "mineable/hammer"))
+		.forceAddTag(Tags.Blocks.STORAGE_BLOCKS)
+		.forceAddTag(Tags.Blocks.BARRELS)
+		.forceAddTag(Tags.Blocks.CHESTS)
+		.forceAddTag(Tags.Blocks.GLASS)
+		.forceAddTag(Tags.Blocks.GLASS_PANES)
+		.forceAddTag(BlockTags.BUTTONS)
+		.forceAddTag(BlockTags.DOORS)
+		.forceAddTag(BlockTags.TRAPDOORS)
+		.forceAddTag(BlockTags.PRESSURE_PLATES)
+		.forceAddTag(BlockTags.BANNERS)
+		.forceAddTag(BlockTags.ANVIL)
+		.forceAddTag(BlockTags.RAILS)
+		.forceAddTag(BlockTags.BEDS)
+		.forceAddTag(BlockTags.SIGNS)
+		.forceAddTag(BlockTags.BEACON_BASE_BLOCKS);
 
 		//astral sorcery stuff
 		tag(STARMETAL_BLOCK).addOptional(new ResourceLocation("astralsorcery", "starmetal"));
@@ -63,8 +62,8 @@ public class MaterialisBlockTags extends BlockTagsProvider {
 		tag(Tags.Blocks.ORES).addTag(STARMETAL_ORE);
 
 		//psi stuff
-		tag(TinkerTags.Blocks.ANVIL_METAL).addOptionalTag(new ResourceLocation("forge", "storage_blocks/ebony_psimetal"));
-		tag(TinkerTags.Blocks.ANVIL_METAL).addOptionalTag(new ResourceLocation("forge", "storage_blocks/ivory_psimetal"));
+		tag(TinkerTags.Blocks.ANVIL_METAL).addOptionalTag(new ResourceLocation("c", "storage_blocks/ebony_psimetal"));
+		tag(TinkerTags.Blocks.ANVIL_METAL).addOptionalTag(new ResourceLocation("c", "storage_blocks/ivory_psimetal"));
 
 		//immersive engineering stuff
 		tag(WRENCH_BLACKLIST).addOptional(new ResourceLocation("immersiveengineering", "workbench"));

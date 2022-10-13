@@ -2,11 +2,16 @@ package com.rcx.materialis.modifiers;
 
 import java.util.List;
 
-import com.hollingsworth.arsnouveau.api.spell.Spell;
-import com.hollingsworth.arsnouveau.common.spell.casters.ReactiveCaster;
+//import com.hollingsworth.arsnouveau.api.spell.Spell;
+//import com.hollingsworth.arsnouveau.common.spell.casters.ReactiveCaster;
 import com.rcx.materialis.util.MaterialisPacketHandler;
 import com.rcx.materialis.util.PacketReactiveSwing;
 
+import io.github.fabricators_of_create.porting_lib.event.common.AttackAirCallback;
+import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
+import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.InteractionHand;
@@ -17,9 +22,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.fml.ModList;
 import slimeknights.mantle.util.OffhandCooldownTracker;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
@@ -32,12 +34,12 @@ import slimeknights.tconstruct.tools.modifiers.ability.tool.OffhandAttackModifie
 
 public class ReactiveModifier extends Modifier {
 
-	public static boolean enabled = ModList.get().isLoaded("ars_nouveau");
+	public static boolean enabled = FabricLoader.getInstance().isModLoaded("ars_nouveau");
 
 	public ReactiveModifier() {
 		if (enabled) {
-			MinecraftForge.EVENT_BUS.addListener(this::leftClick);
-			MinecraftForge.EVENT_BUS.addListener(this::leftClickBlock);
+			AttackAirCallback.EVENT.register(this::leftClick);
+			AttackBlockCallback.EVENT.register(this::leftClickBlock);
 		}
 	}
 
@@ -46,9 +48,9 @@ public class ReactiveModifier extends Modifier {
 		tag.remove("ars_nouveau_reactiveCaster");
 	}
 
-	private void leftClick(PlayerInteractEvent.LeftClickEmpty event) {
-		if (enabled && !event.getItemStack().isEmpty()) {
-			ToolStack tool = getHeldTool(event.getEntityLiving(), InteractionHand.MAIN_HAND);
+	private void leftClick(Player player) {
+		if (enabled && !player.getItemInHand(InteractionHand.MAIN_HAND).isEmpty()) {
+			ToolStack tool = getHeldTool(player, InteractionHand.MAIN_HAND);
 			if (tool != null && tool.getModifierLevel(this) > 0) {
 				MaterialisPacketHandler.INSTANCE.sendToServer(new PacketReactiveSwing());
 			}
@@ -77,16 +79,16 @@ public class ReactiveModifier extends Modifier {
 	}
 
 	//mainhand attack that hits a block
-	private void leftClickBlock(PlayerInteractEvent.LeftClickBlock event) {
+	private InteractionResult leftClickBlock(Player player, Level world, InteractionHand hand, BlockPos pos, Direction direction) {
 		if (enabled) {
-			Player player = event.getPlayer();
 			if(player.level.isClientSide)
-				return;
+				return InteractionResult.PASS;
 
 			ToolStack tool = getHeldTool(player, InteractionHand.MAIN_HAND);
 			if (tool != null && !tool.isBroken() && tool.getModifierLevel(this) > 0)
-				castSpell(tool, player, event.getItemStack(), InteractionHand.MAIN_HAND);
+				castSpell(tool, player, player.getItemInHand(hand), InteractionHand.MAIN_HAND);
 		}
+		return InteractionResult.PASS;
 	}
 
 	//attack that hits an entity
@@ -112,19 +114,19 @@ public class ReactiveModifier extends Modifier {
 	}
 
 	public void castSpell(IToolStackView tool, Player player, ItemStack stack, InteractionHand hand) {
-		if (tool.getModifierLevel(this) * .25 >= Math.random() && new ReactiveCaster(stack).getSpell().isValid()){
-			ReactiveCaster reactiveCaster = new ReactiveCaster(stack);
-			reactiveCaster.castSpell(player.getCommandSenderWorld(), player, hand, null);
-		}
+//		if (tool.getModifierLevel(this) * .25 >= Math.random() && new ReactiveCaster(stack).getSpell().isValid()){
+//			ReactiveCaster reactiveCaster = new ReactiveCaster(stack);
+//			reactiveCaster.castSpell(player.getCommandSenderWorld(), player, hand, null);
+//		}
 	}
 
 	@Override
 	public void addInformation(IToolStackView tool, int level, Player player, List<Component> tooltip, TooltipKey key, TooltipFlag flag) {
-		if (enabled && tool instanceof ToolStack) {
-			Spell spell = new ReactiveCaster(((ToolStack) tool).createStack()).getSpell();
-			if (spell.isValid()) {
-				tooltip.add(new TextComponent(spell.getDisplayString()));
-			}
-		}
+//		if (enabled && tool instanceof ToolStack) {
+//			Spell spell = new ReactiveCaster(((ToolStack) tool).createStack()).getSpell();
+//			if (spell.isValid()) {
+//				tooltip.add(new TextComponent(spell.getDisplayString()));
+//			}
+//		}
 	}
 }

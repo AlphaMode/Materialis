@@ -6,6 +6,7 @@ import com.simibubi.create.AllSoundEvents;
 import com.simibubi.create.AllTags;
 import com.simibubi.create.content.contraptions.wrench.IWrenchable;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionResult;
@@ -18,7 +19,6 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.fml.ModList;
 import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
@@ -26,7 +26,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 public class CreateWrenchingModifier extends NoLevelsModifier {
 
-	boolean enabled = ModList.get().isLoaded("create");
+	boolean enabled = FabricLoader.getInstance().isModLoaded("create");
 	Random rand = new Random();
 
 	@Override

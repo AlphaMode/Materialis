@@ -2,14 +2,15 @@ package com.rcx.materialis.modifiers;
 
 import java.util.List;
 
+import io.github.fabricators_of_create.porting_lib.event.common.BlockEvents;
+import io.github.fabricators_of_create.porting_lib.event.common.LivingEntityEvents;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.storage.loot.LootContext;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.living.LivingExperienceDropEvent;
-import net.minecraftforge.event.world.BlockEvent.BreakEvent;
 import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
 import slimeknights.tconstruct.library.tools.helper.ModifierLootingHandler;
 import slimeknights.tconstruct.library.tools.helper.ModifierUtil;
@@ -20,8 +21,8 @@ public class VoidingModifier extends NoLevelsModifier {
 
 	public VoidingModifier() {
 		super();
-		MinecraftForge.EVENT_BUS.addListener(this::beforeBlockBreak);
-		MinecraftForge.EVENT_BUS.addListener(this::onExperienceDrop);
+		BlockEvents.BLOCK_BREAK.register(this::beforeBlockBreak);
+		LivingEntityEvents.EXPERIENCE_DROP_WITH_ENTITY.register(this::onExperienceDrop);
 	}
 
 	@Override
@@ -40,17 +41,18 @@ public class VoidingModifier extends NoLevelsModifier {
 		return (int) ((xp + RANDOM.nextFloat()) * modifier);
 	}
 
-	private void beforeBlockBreak(BreakEvent event) {
+	private void beforeBlockBreak(BlockEvents.BreakEvent event) {
 		ToolStack tool = getHeldTool(event.getPlayer(), InteractionHand.MAIN_HAND);
 		if (tool != null && tool.getModifierLevel(this) > 0) {
 			event.setExpToDrop(boostXP(event.getExpToDrop(), EnchantmentHelper.getItemEnchantmentLevel(Enchantments.BLOCK_FORTUNE, event.getPlayer().getMainHandItem())));
 		}
 	}
 
-	private void onExperienceDrop(LivingExperienceDropEvent event) {
-		ToolStack tool = getHeldTool(event.getAttackingPlayer(), ModifierLootingHandler.getLootingSlot(event.getAttackingPlayer()));
+	private int onExperienceDrop(int i, Player attackingPlayer, LivingEntity entity) {
+		ToolStack tool = getHeldTool(attackingPlayer, ModifierLootingHandler.getLootingSlot(attackingPlayer));
 		if (tool != null && tool.getModifierLevel(this) > 0) {
-			event.setDroppedExperience(boostXP(event.getDroppedExperience(), ModifierUtil.getLeggingsLootingLevel(event.getAttackingPlayer(), event.getEntity(), null, ModifierUtil.getLootingLevel(tool, event.getAttackingPlayer(), event.getEntity(), null))));
+			return (boostXP(i, ModifierUtil.getLeggingsLootingLevel(attackingPlayer, entity, null, ModifierUtil.getLootingLevel(tool, attackingPlayer, entity, null))));
 		}
+		return i;
 	}
 }

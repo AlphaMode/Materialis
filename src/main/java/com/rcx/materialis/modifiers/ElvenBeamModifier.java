@@ -6,6 +6,8 @@ import com.rcx.materialis.datagen.MaterialisModifiers;
 import com.rcx.materialis.util.MaterialisPacketHandler;
 import com.rcx.materialis.util.PacketElvenBeam;
 
+import io.github.fabricators_of_create.porting_lib.event.common.AttackAirCallback;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -13,9 +15,6 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.fml.ModList;
 import slimeknights.mantle.util.OffhandCooldownTracker;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
@@ -29,19 +28,19 @@ import vazkii.botania.common.item.ModItems;
 
 public class ElvenBeamModifier extends Modifier {
 
-	public static boolean enabled = ModList.get().isLoaded("botania");
+	public static boolean enabled = FabricLoader.getInstance().isModLoaded("botania");
 	public static int MANA_PER_BEAM = 200;
 	public static float CHANCE = 0.4f;
 	public static Random rand = new Random();
 
 	public ElvenBeamModifier() {
 		if (enabled)
-			MinecraftForge.EVENT_BUS.addListener(this::leftClick);
+			AttackAirCallback.EVENT.register(this::leftClick);
 	}
 
-	private void leftClick(PlayerInteractEvent.LeftClickEmpty event) {
-		if (enabled && !event.getItemStack().isEmpty()) {
-			ToolStack tool = getHeldTool(event.getEntityLiving(), InteractionHand.MAIN_HAND);
+	private void leftClick(Player player) {
+		if (enabled && !player.getItemInHand(InteractionHand.MAIN_HAND).isEmpty()) {
+			ToolStack tool = getHeldTool(player, InteractionHand.MAIN_HAND);
 			if (tool != null && tool.getModifierLevel(this) > 0) {
 				MaterialisPacketHandler.INSTANCE.sendToServer(new PacketElvenBeam());
 			}

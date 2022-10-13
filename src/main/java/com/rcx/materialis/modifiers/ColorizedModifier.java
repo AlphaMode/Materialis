@@ -3,17 +3,17 @@ package com.rcx.materialis.modifiers;
 import com.rcx.materialis.Materialis;
 import com.rcx.materialis.util.ITintingModifier;
 
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.fml.ModList;
 import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 public class ColorizedModifier extends NoLevelsModifier implements ITintingModifier {
 
-	public static boolean enabled = ModList.get().isLoaded("psi");
+	public static boolean enabled = FabricLoader.getInstance().isModLoaded("psi");
 	public static final ResourceLocation COLORIZER = new ResourceLocation(Materialis.modID, "colorizer");
 
 	@Override

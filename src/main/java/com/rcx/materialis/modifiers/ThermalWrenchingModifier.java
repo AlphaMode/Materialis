@@ -1,8 +1,9 @@
 package com.rcx.materialis.modifiers;
 
-import cofh.lib.block.IDismantleable;
-import cofh.lib.util.Utils;
-import cofh.lib.util.references.CoreReferences;
+//import cofh.lib.block.IDismantleable;
+//import cofh.lib.util.Utils;
+//import cofh.lib.util.references.CoreReferences;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -13,7 +14,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraftforge.fml.ModList;
 import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
@@ -21,7 +21,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 public class ThermalWrenchingModifier extends NoLevelsModifier {
 
-	boolean enabled = ModList.get().isLoaded("cofh_core");
+	boolean enabled = FabricLoader.getInstance().isModLoaded("cofh_core");
 
 	@Override
 	public InteractionResult beforeBlockUse(IToolStackView tool, int level, UseOnContext context, EquipmentSlot slot) {
@@ -30,14 +30,14 @@ public class ThermalWrenchingModifier extends NoLevelsModifier {
 			BlockPos pos = context.getClickedPos();
 			BlockState state = context.getLevel().getBlockState(context.getClickedPos());
 			Block block = state.getBlock();
-			if (context.getPlayer().isSecondaryUseActive() && block.canEntityDestroy(state, world, pos, context.getPlayer()) && block instanceof IDismantleable && ((IDismantleable) block).canDismantle(world, pos, state, context.getPlayer())) {
-				if (Utils.isServerWorld(world)) {
-					BlockHitResult target = new BlockHitResult(context.getClickLocation(), context.getClickedFace(), context.getClickedPos(), context.isInside());
-					((IDismantleable) block).dismantleBlock(world, pos, state, target, context.getPlayer(), false);
-				}
-				ToolDamageUtil.damage(tool, 1, context.getPlayer(), context.getItemInHand());
-				return InteractionResult.SUCCESS;
-			}
+//			if (context.getPlayer().isSecondaryUseActive() && block.canEntityDestroy(state, world, pos, context.getPlayer()) && block instanceof IDismantleable && ((IDismantleable) block).canDismantle(world, pos, state, context.getPlayer())) {
+//				if (Utils.isServerWorld(world)) {
+//					BlockHitResult target = new BlockHitResult(context.getClickLocation(), context.getClickedFace(), context.getClickedPos(), context.isInside());
+//					((IDismantleable) block).dismantleBlock(world, pos, state, target, context.getPlayer(), false);
+//				}
+//				ToolDamageUtil.damage(tool, 1, context.getPlayer(), context.getItemInHand());
+//				return InteractionResult.SUCCESS;
+//			}
 		}
 		return InteractionResult.PASS;
 	}
@@ -47,7 +47,7 @@ public class ThermalWrenchingModifier extends NoLevelsModifier {
 		if (enabled) {
 			LivingEntity target = context.getLivingTarget();
 			if (target != null && context.isFullyCharged() && target.isAlive()) {
-				target.addEffect(new MobEffectInstance(CoreReferences.WRENCHED, 60, 0, false, false));
+//				target.addEffect(new MobEffectInstance(CoreReferences.WRENCHED, 60, 0, false, false));
 			}
 		}
 		return 0;

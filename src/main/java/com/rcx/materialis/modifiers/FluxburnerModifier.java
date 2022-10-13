@@ -4,11 +4,11 @@ import java.util.List;
 
 import com.rcx.materialis.util.TinkerToolFluxed;
 
+import io.github.fabricators_of_create.porting_lib.event.common.PlayerBreakSpeedCallback;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraftforge.event.entity.player.PlayerEvent.BreakSpeed;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.tools.context.ToolHarvestContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
@@ -20,9 +20,9 @@ public class FluxburnerModifier extends CapacitorModifier {
 	private static final int ENERGY_COST = 100;
 
 	@Override
-	public void onBreakSpeed(IToolStackView tool, int level, BreakSpeed event, Direction sideHit, boolean isEffective, float miningSpeedModifier) {
+	public void onBreakSpeed(IToolStackView tool, int level, PlayerBreakSpeedCallback.BreakSpeed event, Direction sideHit, boolean isEffective, float miningSpeedModifier) {
 		if (isEffective && !tool.isBroken() && TinkerToolFluxed.removeEnergy(tool, ENERGY_COST * level, true, false)) {
-			event.setNewSpeed(event.getNewSpeed() + 2.5f * level * tool.getMultiplier(ToolStats.MINING_SPEED));
+			event.newSpeed = (event.newSpeed + 2.5f * level * tool.getMultiplier(ToolStats.MINING_SPEED));
 		}
 	}
 

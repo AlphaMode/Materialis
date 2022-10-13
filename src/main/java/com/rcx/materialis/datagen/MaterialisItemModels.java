@@ -6,6 +6,8 @@ import com.rcx.materialis.MaterialisResources;
 import com.rcx.materialis.MaterialisResources.FluidWithBlockNBucket;
 import com.rcx.materialis.MaterialisResources.IngotWithBlockNNugget;
 
+import io.github.fabricators_of_create.porting_lib.mixin.common.accessor.BucketItemAccessor;
+import io.github.fabricators_of_create.porting_lib.util.RegistryObject;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BucketItem;
@@ -14,7 +16,6 @@ import net.minecraftforge.client.model.generators.CustomLoaderBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.RegistryObject;
 import slimeknights.tconstruct.common.registration.CastItemObject;
 
 public class MaterialisItemModels extends ItemModelProvider {
@@ -65,7 +66,7 @@ public class MaterialisItemModels extends ItemModelProvider {
 		builder.customLoader((t, u) ->  new CustomLoaderBuilder(((ModelBuilder) t).getLocation(), (ModelBuilder) t, (ExistingFileHelper) u) {
 			public JsonObject toJson(JsonObject json) {
 				json.addProperty("loader", "forge:bucket");
-				json.addProperty("fluid", registryObject.get().getFluid().getRegistryName().toString());
+				json.addProperty("fluid", ((BucketItemAccessor)registryObject.get()).port_lib$getContent().getRegistryName().toString());
 				return json;
 			}
 		});

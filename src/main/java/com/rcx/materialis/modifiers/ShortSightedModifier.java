@@ -3,6 +3,7 @@ package com.rcx.materialis.modifiers;
 import java.util.UUID;
 import java.util.function.BiConsumer;
 
+import com.jamieswhiteshirt.reachentityattributes.ReachEntityAttributes;
 import com.rcx.materialis.Materialis;
 
 import net.minecraft.world.entity.EquipmentSlot;
@@ -10,7 +11,6 @@ import net.minecraft.world.entity.EquipmentSlot.Type;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation;
-import net.minecraftforge.common.ForgeMod;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
@@ -23,7 +23,7 @@ public class ShortSightedModifier extends Modifier {
 	@Override
 	public void addAttributes(IToolStackView tool, int level, EquipmentSlot slot, BiConsumer<Attribute, AttributeModifier> consumer) {
 		if (slot.getType() == Type.HAND) {
-			consumer.accept(ForgeMod.REACH_DISTANCE.get(), new AttributeModifier(slot == EquipmentSlot.OFFHAND ? OFFHAND_ATTRIBUTE_UUID : MAINHAND_ATTRIBUTE_UUID, ATTRIBUTE_NAME, -0.2 * level, Operation.MULTIPLY_TOTAL));
+			consumer.accept(ReachEntityAttributes.REACH, new AttributeModifier(slot == EquipmentSlot.OFFHAND ? OFFHAND_ATTRIBUTE_UUID : MAINHAND_ATTRIBUTE_UUID, ATTRIBUTE_NAME, -0.2 * level, Operation.MULTIPLY_TOTAL));
 		}
 	}
 }

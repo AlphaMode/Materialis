@@ -5,9 +5,14 @@ import java.util.List;
 import java.util.function.Supplier;
 
 import com.rcx.materialis.block.LightResidueBlock;
-import com.rcx.materialis.util.RuneModifierRecipe;
 import com.rcx.materialis.util.SensorModifierRecipe;
 
+import io.github.fabricators_of_create.porting_lib.util.FluidAttributes;
+import io.github.fabricators_of_create.porting_lib.util.LazyRegistrar;
+import io.github.fabricators_of_create.porting_lib.util.RegistryObject;
+import io.github.fabricators_of_create.porting_lib.util.SimpleFlowableFluid;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
@@ -23,11 +28,6 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
-import net.minecraftforge.fluids.FluidAttributes;
-import net.minecraftforge.fluids.ForgeFlowingFluid;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.mantle.registration.object.ItemObject;
 import slimeknights.tconstruct.common.TinkerModule;
@@ -44,19 +44,19 @@ import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 
 public class MaterialisResources {
 
-	public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, Materialis.modID);
-	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Materialis.modID);
-	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Materialis.modID);
+	public static final LazyRegistrar<Fluid> FLUIDS = LazyRegistrar.create(Registry.FLUID, Materialis.modID);
+	public static final LazyRegistrar<Block> BLOCKS = LazyRegistrar.create(Registry.BLOCK, Materialis.modID);
+	public static final LazyRegistrar<Item> ITEMS = LazyRegistrar.create(Registry.ITEM, Materialis.modID);
 	protected static final ItemDeferredRegisterExtension ITEMS_EXTENDED = new ItemDeferredRegisterExtension(Materialis.modID);
-	private static final Supplier<Item.Properties> TOOL_PROPS = () -> new Item.Properties().tab(TinkerTools.TAB_TOOLS);
-	private static final Item.Properties PARTS_PROPS = new Item.Properties().tab(TinkerToolParts.TAB_TOOL_PARTS);
-	public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, Materialis.modID);
+	private static final Supplier<FabricItemSettings> TOOL_PROPS = () -> new FabricItemSettings().group(TinkerTools.TAB_TOOLS);
+	private static final FabricItemSettings PARTS_PROPS = new FabricItemSettings().group(TinkerToolParts.TAB_TOOL_PARTS);
+	public static final LazyRegistrar<RecipeSerializer<?>> RECIPE_SERIALIZERS = LazyRegistrar.create(Registry.RECIPE_SERIALIZER, Materialis.modID);
 
 	/*
 	 * RECIPE SERIALIZERS
 	 */
 
-	public static final RegistryObject<RuneModifierRecipe.Serializer> runeModifierSerializer = RECIPE_SERIALIZERS.register("rune_modifier", RuneModifierRecipe.Serializer::new);
+//	public static final RegistryObject<RuneModifierRecipe.Serializer> runeModifierSerializer = RECIPE_SERIALIZERS.register("rune_modifier", RuneModifierRecipe.Serializer::new);
 	//public static final RegistryObject<ColorizerModifierRecipe.Serializer> colorizerModifierSerializer = RECIPE_SERIALIZERS.register("colorizer_modifier", ColorizerModifierRecipe.Serializer::new);
 	public static final RegistryObject<SensorModifierRecipe.Serializer> sensorModifierSerializer = RECIPE_SERIALIZERS.register("sensor_modifier", SensorModifierRecipe.Serializer::new);
 
@@ -145,7 +145,7 @@ public class MaterialisResources {
 	 */
 
 	//custom casts
-	private static final Item.Properties SMELTERY_PROPS = new Item.Properties().tab(TinkerSmeltery.TAB_SMELTERY);
+	private static final FabricItemSettings SMELTERY_PROPS = new FabricItemSettings().group(TinkerSmeltery.TAB_SMELTERY);
 	public static final CastItemObject INLAY_CAST = ITEMS_EXTENDED.registerCast("inlay", SMELTERY_PROPS);
 	public static final CastItemObject WRENCH_HEAD_CAST = ITEMS_EXTENDED.registerCast("wrench_head", SMELTERY_PROPS);
 
@@ -156,7 +156,7 @@ public class MaterialisResources {
 	public static final ItemObject<ModifiableItem> WRENCH = ITEMS_EXTENDED.register("wrench", () -> new ModifiableItem(TOOL_PROPS.get(), WRENCH_DEFINITION));
 
 	public static final ToolDefinition BATTLEWRENCH_DEFINITION = ToolDefinition.builder(new ResourceLocation(Materialis.modID, "battlewrench")).meleeHarvest().build();
-	public static final ItemObject<ModifiableItem> BATTLEWRENCH = ITEMS_EXTENDED.register("battlewrench", () -> new ModifiableItem(new Item.Properties(), BATTLEWRENCH_DEFINITION));
+	public static final ItemObject<ModifiableItem> BATTLEWRENCH = ITEMS_EXTENDED.register("battlewrench", () -> new ModifiableItem(new FabricItemSettings(), BATTLEWRENCH_DEFINITION));
 
 	//psi armor
 	public static final SlotType SENSOR_SLOT = SlotType.create("sensor", 0xFFEB422A);
@@ -165,7 +165,7 @@ public class MaterialisResources {
 			.setStatsProvider(ToolStatProviders.NO_PARTS)
 			.setSoundEvent(SoundEvents.ARMOR_EQUIP_GENERIC)
 			.build();
-	public static final EnumObject<ArmorSlotType, ModifiableArmorItem> PSIMETAL_EXOSUIT = ITEMS_EXTENDED.registerEnum("psimetal_exosuit", ArmorSlotType.values(), type -> new ExosuitModelArmorItem(EXOSUIT_DEFINITION, type, new Item.Properties().tab(ModList.get().isLoaded("psi") || !FMLEnvironment.production ? TinkerTools.TAB_TOOLS : null)));
+	public static final EnumObject<ArmorSlotType, ModifiableArmorItem> PSIMETAL_EXOSUIT = ITEMS_EXTENDED.registerEnum("psimetal_exosuit", ArmorSlotType.values(), type -> new ExosuitModelArmorItem(EXOSUIT_DEFINITION, type, new FabricItemSettings().tab(ModList.get().isLoaded("psi") || !FMLEnvironment.production ? TinkerTools.TAB_TOOLS : null)));
 */
 
 
@@ -201,19 +201,19 @@ public class MaterialisResources {
 
 			BLOCK = BLOCKS.register(name + "_block", () -> new Block(BlockBehaviour.Properties.of(Material.METAL, color).strength(hardness, explosionResistance).sound(SoundType.METAL).requiresCorrectToolForDrops()));
 
-			INGOT = ITEMS.register(name + "_ingot", () -> new Item(new Item.Properties().tab(TinkerModule.TAB_GENERAL)));
-			NUGGET = ITEMS.register(name + "_nugget", () -> new Item(new Item.Properties().tab(TinkerModule.TAB_GENERAL)));
-			BLOCK_ITEM = ITEMS.register(name + "_block", () -> new BlockItem(BLOCK.get(), new Item.Properties().tab(TinkerModule.TAB_GENERAL)));
+			INGOT = ITEMS.register(name + "_ingot", () -> new Item(new FabricItemSettings().tab(TinkerModule.TAB_GENERAL)));
+			NUGGET = ITEMS.register(name + "_nugget", () -> new Item(new FabricItemSettings().tab(TinkerModule.TAB_GENERAL)));
+			BLOCK_ITEM = ITEMS.register(name + "_block", () -> new BlockItem(BLOCK.get(), new FabricItemSettings().tab(TinkerModule.TAB_GENERAL)));
 		}
 	}
 
 	public static class FluidWithBlockNBucket {
 
-		public final ForgeFlowingFluid.Properties PROPERTIES;
+		public final SimpleFlowableFluid.Properties PROPERTIES;
 
-		public final RegistryObject<ForgeFlowingFluid.Source> FLUID;
-		public final RegistryObject<ForgeFlowingFluid.Flowing> FLUID_FLOW;
-		public final FluidObject<ForgeFlowingFluid> OBJECT;
+		public final RegistryObject<SimpleFlowableFluid.Still> FLUID;
+		public final RegistryObject<SimpleFlowableFluid.Flowing> FLUID_FLOW;
+		public final FluidObject<SimpleFlowableFluid> OBJECT;
 
 		public final ResourceLocation TEXTURE_STILL;
 		public final ResourceLocation TEXTURE_FLOW;
@@ -237,23 +237,23 @@ public class MaterialisResources {
 			this.density = density;
 			this.viscosity = viscosity;
 
-			FLUID = FLUIDS.register(name, () -> new ForgeFlowingFluid.Source(getFluidProperties()));
-			FLUID_FLOW = FLUIDS.register("flowing_" + name, () -> new ForgeFlowingFluid.Flowing(getFluidProperties()));
+			FLUID = FLUIDS.register(name, () -> new SimpleFlowableFluid.Still(getFluidProperties()));
+			FLUID_FLOW = FLUIDS.register("flowing_" + name, () -> new SimpleFlowableFluid.Flowing(getFluidProperties()));
 
 			TEXTURE_STILL = new ResourceLocation(Materialis.modID, "block/fluid/" + name + "_still");
 			TEXTURE_FLOW = new ResourceLocation(Materialis.modID, "block/fluid/" + name + "_flow");
 
-			PROPERTIES = new ForgeFlowingFluid.Properties(FLUID, FLUID_FLOW, FluidAttributes.builder(TEXTURE_STILL, TEXTURE_FLOW).overlay(TEXTURE_STILL).luminosity(light).density(density).viscosity(6000).temperature(temperature).sound(SoundEvents.BUCKET_FILL_LAVA, SoundEvents.BUCKET_EMPTY_LAVA));
+			PROPERTIES = new SimpleFlowableFluid.Properties(FLUID, FLUID_FLOW, FluidAttributes.builder(TEXTURE_STILL, TEXTURE_FLOW).overlay(TEXTURE_STILL).luminosity(light).density(density).viscosity(6000).temperature(temperature).sound(SoundEvents.BUCKET_FILL_LAVA, SoundEvents.BUCKET_EMPTY_LAVA));
 
-			FLUID_BLOCK = BLOCKS.register(name + "_block", () -> new LiquidBlock(FLUID, Block.Properties.of(Material.LAVA).lightLevel((state) -> { return light; }).randomTicks().strength(100.0F).noDrops()));
-			FLUID_BUCKET = ITEMS.register(name + "_bucket", () -> new BucketItem(FLUID, new BucketItem.Properties().craftRemainder(Items.BUCKET).stacksTo(1).tab(CreativeModeTab.TAB_MISC)));
+			FLUID_BLOCK = BLOCKS.register(name + "_block", () -> new LiquidBlock(FLUID.get(), Block.Properties.of(Material.LAVA).lightLevel((state) -> { return light; }).randomTicks().strength(100.0F).noDrops()));
+			FLUID_BUCKET = ITEMS.register(name + "_bucket", () -> new BucketItem(FLUID.get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).tab(CreativeModeTab.TAB_MISC)));
 
-			PROPERTIES.bucket(FLUID_BUCKET).block(FLUID_BLOCK).explosionResistance(1000F).tickRate(9);
+			PROPERTIES.bucket(FLUID_BUCKET).block(FLUID_BLOCK).blastResistance(1000F).tickRate(9);
 
-			OBJECT = new FluidObject<ForgeFlowingFluid>(new ResourceLocation(Materialis.modID, name), name, FLUID, FLUID_FLOW, FLUID_BLOCK);
+			OBJECT = new FluidObject<SimpleFlowableFluid>(new ResourceLocation(Materialis.modID, name), name, FLUID, FLUID_FLOW, FLUID_BLOCK);
 		}
 
-		public ForgeFlowingFluid.Properties getFluidProperties() {
+		public SimpleFlowableFluid.Properties getFluidProperties() {
 			return PROPERTIES;       
 		}
 	}

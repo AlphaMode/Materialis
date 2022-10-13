@@ -4,9 +4,9 @@ import javax.annotation.Nullable;
 
 import com.rcx.materialis.util.TinkerToolFluxed;
 
+import io.github.fabricators_of_create.porting_lib.event.common.PlayerBreakSpeedCallback;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraftforge.event.entity.player.PlayerEvent.BreakSpeed;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
@@ -34,9 +34,9 @@ public class PowerHungryModifier extends CapacitorModifier {
 	}
 
 	@Override
-	public void onBreakSpeed(IToolStackView tool, int level, BreakSpeed event, Direction sideHit, boolean isEffective, float miningSpeedModifier) {
+	public void onBreakSpeed(IToolStackView tool, int level, PlayerBreakSpeedCallback.BreakSpeed event, Direction sideHit, boolean isEffective, float miningSpeedModifier) {
 		if (!TinkerToolFluxed.removeEnergy(tool, ENERGY_COST * level, true, false)) {
-			event.setNewSpeed(event.getNewSpeed() / 1.5f);
+			event.newSpeed = event.newSpeed / 1.5f;
 		}
 	}
 

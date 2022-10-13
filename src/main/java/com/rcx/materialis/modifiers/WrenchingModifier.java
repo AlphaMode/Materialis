@@ -4,11 +4,19 @@ import java.util.Collection;
 
 import com.rcx.materialis.datagen.MaterialisBlockTags;
 
+import io.github.fabricators_of_create.porting_lib.util.EntityDestroyBlock;
+import io.github.fabricators_of_create.porting_lib.util.TierSortingRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
+import net.minecraft.world.entity.boss.wither.WitherBoss;
+import net.minecraft.world.entity.projectile.WitherSkull;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Rotation;
@@ -20,7 +28,6 @@ import net.minecraft.world.level.block.state.properties.Half;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.block.state.properties.RailShape;
 import net.minecraft.world.level.block.state.properties.SlabType;
-import net.minecraftforge.common.TierSortingRegistry;
 import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
 import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
@@ -70,8 +77,21 @@ public class WrenchingModifier extends NoLevelsModifier {
 		return InteractionResult.PASS;
 	}
 
+	private boolean canEntityDestroy(BlockState state, BlockGetter level, BlockPos pos, Entity entity) {
+		if (state.getBlock() instanceof EntityDestroyBlock destroyBlock)
+			return destroyBlock.canEntityDestroy(state, level, pos, entity);
+		if (entity instanceof EnderDragon) {
+			return !state.is(BlockTags.DRAGON_IMMUNE);
+		} else if ((entity instanceof WitherBoss) ||
+				(entity instanceof WitherSkull)) {
+			return state.isAir() || WitherBoss.canDestroy(state);
+		}
+
+		return true;
+	}
+
 	public InteractionResult blockUse(IToolStackView tool, int level, Level world, BlockPos pos, BlockState state, UseOnContext context) {
-		if (context.getPlayer().isSecondaryUseActive() || !state.getBlock().canEntityDestroy(state, world, pos, context.getPlayer()) || !TierSortingRegistry.isCorrectTierForDrops(tool.getStats().get(ToolStats.HARVEST_TIER), state) || !isRotatable(state, world, pos))
+		if (context.getPlayer().isSecondaryUseActive() || !canEntityDestroy(state, world, pos, context.getPlayer()) || !TierSortingRegistry.isCorrectTierForDrops(tool.getStats().get(ToolStats.HARVEST_TIER), state) || !isRotatable(state, world, pos))
 			return InteractionResult.PASS;
 
 		Direction face = context.getClickedFace();

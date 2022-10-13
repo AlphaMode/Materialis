@@ -28,11 +28,6 @@ public class LightResidueBlock extends AirBlock implements SimpleWaterloggedBloc
 	}
 
 	@Override
-	protected boolean isAir(BlockState state) {
-		return true;
-	}
-
-	@Override
 	public void randomTick(BlockState state, ServerLevel world, BlockPos pos, Random rand) {
 		world.removeBlock(pos, false);
 	}
