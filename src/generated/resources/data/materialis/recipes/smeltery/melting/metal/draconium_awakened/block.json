@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:storage_blocks/draconium_awakened",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:storage_blocks/draconium_awakened"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:storage_blocks/draconium_awakened"
+    "tag": "c:storage_blocks/draconium_awakened"
   },
   "result": {
     "fluid": "materialis:molten_draconium_awakened",
-    "amount": 810
+    "amount": 81000
   },
   "temperature": 1470,
   "time": 238

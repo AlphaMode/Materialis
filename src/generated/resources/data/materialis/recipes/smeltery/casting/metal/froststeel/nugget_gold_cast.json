@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:nuggets/froststeel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:nuggets/froststeel"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/nugget"
   },
   "fluid": {
-    "tag": "forge:molten_froststeel",
-    "amount": 10
+    "tag": "c:molten_froststeel",
+    "amount": 1000
   },
   "result": {
-    "tag": "forge:nuggets/froststeel"
+    "tag": "c:nuggets/froststeel"
   },
   "cooling_time": 21
 }

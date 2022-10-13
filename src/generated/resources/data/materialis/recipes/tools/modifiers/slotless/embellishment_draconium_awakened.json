@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:swappable_modifier",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/draconium_awakened",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/draconium_awakened"
+      ]
     }
   ],
   "inputs": [
     {
-      "tag": "forge:ingots/draconium_awakened"
+      "tag": "c:ingots/draconium_awakened"
     },
     {
-      "tag": "forge:ingots/draconium_awakened"
+      "tag": "c:ingots/draconium_awakened"
     },
     {
-      "tag": "forge:ingots/draconium_awakened"
+      "tag": "c:ingots/draconium_awakened"
     }
   ],
   "tools": [

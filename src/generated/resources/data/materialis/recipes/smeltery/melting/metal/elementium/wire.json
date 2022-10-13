@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:wires/elementium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:wires/elementium"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:wires/elementium"
+    "tag": "c:wires/elementium"
   },
   "result": {
     "fluid": "materialis:molten_elementium",
-    "amount": 45
+    "amount": 4500
   },
   "temperature": 1160,
   "time": 14

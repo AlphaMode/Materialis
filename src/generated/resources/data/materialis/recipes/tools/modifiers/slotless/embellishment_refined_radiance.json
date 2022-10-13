@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:swappable_modifier",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/refined_radiance",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/refined_radiance"
+      ]
     }
   ],
   "inputs": [
     {
-      "tag": "forge:ingots/refined_radiance"
+      "tag": "c:ingots/refined_radiance"
     },
     {
-      "tag": "forge:ingots/refined_radiance"
+      "tag": "c:ingots/refined_radiance"
     },
     {
-      "tag": "forge:ingots/refined_radiance"
+      "tag": "c:ingots/refined_radiance"
     }
   ],
   "tools": [

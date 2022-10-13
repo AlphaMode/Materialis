@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:gears/elementium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:gears/elementium"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/gear"
   },
   "fluid": {
-    "tag": "forge:molten_elementium",
-    "amount": 360
+    "tag": "c:molten_elementium",
+    "amount": 36000
   },
   "result": {
-    "tag": "forge:gears/elementium"
+    "tag": "c:gears/elementium"
   },
   "cooling_time": 142
 }

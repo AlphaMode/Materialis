@@ -1,21 +1,20 @@
 {
   "type": "tconstruct:material",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:storage_blocks/pewter",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:storage_blocks/pewter"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:storage_blocks/pewter"
+    "tag": "c:storage_blocks/pewter"
   },
   "value": 9,
   "needed": 1,
   "material": "materialis:pewter",
   "leftover": {
-    "tag": "forge:ingots/pewter"
+    "tag": "c:ingots/pewter"
   }
 }

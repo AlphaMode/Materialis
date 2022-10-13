@@ -1,6 +1,6 @@
 {
   "replace": false,
   "values": [
-    "#forge:ores/starmetal"
+    "#c:dusts/flux_infused"
   ]
 }

@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:nuggets/quicksilver",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:nuggets/quicksilver"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/nugget"
   },
   "fluid": {
-    "tag": "forge:molten_quicksilver",
-    "amount": 10
+    "tag": "c:molten_quicksilver",
+    "amount": 1000
   },
   "result": {
-    "tag": "forge:nuggets/quicksilver"
+    "tag": "c:nuggets/quicksilver"
   },
   "cooling_time": 15
 }

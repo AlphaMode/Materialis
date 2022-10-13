@@ -1,28 +1,27 @@
 {
   "type": "tconstruct:ore_melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:raw_materials/utherium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:raw_materials/utherium"
+      ]
     }
   ],
   "rate": "metal",
   "ingredient": {
-    "tag": "forge:raw_materials/utherium"
+    "tag": "c:raw_materials/utherium"
   },
   "result": {
     "fluid": "materialis:molten_utherium",
-    "amount": 90
+    "amount": 9000
   },
   "temperature": 1070,
   "time": 103,
   "byproducts": [
     {
       "fluid": "materialis:molten_froststeel",
-      "amount": 30
+      "amount": 3000
     }
   ]
 }

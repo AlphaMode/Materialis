@@ -1,12 +1,11 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/forgotten_metal",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/forgotten_metal"
+      ]
     }
   ],
   "cast": {
@@ -14,11 +13,11 @@
   },
   "cast_consumed": true,
   "fluid": {
-    "tag": "forge:molten_forgotten_metal",
-    "amount": 90
+    "tag": "c:molten_forgotten_metal",
+    "amount": 9000
   },
   "result": {
-    "tag": "forge:ingots/forgotten_metal"
+    "tag": "c:ingots/forgotten_metal"
   },
   "cooling_time": 73
 }

@@ -1,16 +1,15 @@
 {
   "type": "tconstruct:material",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:nuggets/aluminum",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:nuggets/aluminum"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:nuggets/aluminum"
+    "tag": "c:nuggets/aluminum"
   },
   "value": 1,
   "needed": 9,

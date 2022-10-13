@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:swappable_modifier",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/psimetal",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/psimetal"
+      ]
     }
   ],
   "inputs": [
     {
-      "tag": "forge:ingots/psimetal"
+      "tag": "c:ingots/psimetal"
     },
     {
-      "tag": "forge:ingots/psimetal"
+      "tag": "c:ingots/psimetal"
     },
     {
-      "tag": "forge:ingots/psimetal"
+      "tag": "c:ingots/psimetal"
     }
   ],
   "tools": [

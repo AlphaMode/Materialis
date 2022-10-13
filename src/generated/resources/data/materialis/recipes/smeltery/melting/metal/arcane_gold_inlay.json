@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:inlays/arcane_gold",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:inlays/arcane_gold"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:inlays/arcane_gold"
+    "tag": "c:inlays/arcane_gold"
   },
   "result": {
     "fluid": "materialis:molten_arcane_gold",
-    "amount": 180
+    "amount": 18000
   },
   "temperature": 670,
   "time": 84

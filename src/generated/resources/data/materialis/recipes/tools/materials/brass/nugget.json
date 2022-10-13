@@ -1,16 +1,15 @@
 {
   "type": "tconstruct:material",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:nuggets/brass",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:nuggets/brass"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:nuggets/brass"
+    "tag": "c:nuggets/brass"
   },
   "value": 1,
   "needed": 9,

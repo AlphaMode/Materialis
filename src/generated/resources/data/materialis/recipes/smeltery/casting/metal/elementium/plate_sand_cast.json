@@ -1,12 +1,11 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:plates/elementium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:plates/elementium"
+      ]
     }
   ],
   "cast": {
@@ -14,11 +13,11 @@
   },
   "cast_consumed": true,
   "fluid": {
-    "tag": "forge:molten_elementium",
-    "amount": 90
+    "tag": "c:molten_elementium",
+    "amount": 9000
   },
   "result": {
-    "tag": "forge:plates/elementium"
+    "tag": "c:plates/elementium"
   },
   "cooling_time": 71
 }

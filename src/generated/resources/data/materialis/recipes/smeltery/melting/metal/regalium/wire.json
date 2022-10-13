@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:wires/regalium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:wires/regalium"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:wires/regalium"
+    "tag": "c:wires/regalium"
   },
   "result": {
     "fluid": "materialis:molten_regalium",
-    "amount": 45
+    "amount": 4500
   },
   "temperature": 620,
   "time": 11

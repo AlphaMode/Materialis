@@ -1,12 +1,11 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:nuggets/alfsteel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:nuggets/alfsteel"
+      ]
     }
   ],
   "cast": {
@@ -14,11 +13,11 @@
   },
   "cast_consumed": true,
   "fluid": {
-    "tag": "forge:molten_alfsteel",
-    "amount": 10
+    "tag": "c:molten_alfsteel",
+    "amount": 1000
   },
   "result": {
-    "tag": "forge:nuggets/alfsteel"
+    "tag": "c:nuggets/alfsteel"
   },
   "cooling_time": 26
 }

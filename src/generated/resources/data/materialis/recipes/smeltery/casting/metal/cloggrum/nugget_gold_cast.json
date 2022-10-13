@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:nuggets/cloggrum",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:nuggets/cloggrum"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/nugget"
   },
   "fluid": {
-    "tag": "forge:molten_cloggrum",
-    "amount": 10
+    "tag": "c:molten_cloggrum",
+    "amount": 1000
   },
   "result": {
-    "tag": "forge:nuggets/cloggrum"
+    "tag": "c:nuggets/cloggrum"
   },
   "cooling_time": 18
 }

@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:wires/pink_slime",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:wires/pink_slime"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/wire"
   },
   "fluid": {
-    "tag": "forge:molten_pink_slime",
-    "amount": 45
+    "tag": "c:molten_pink_slime",
+    "amount": 4500
   },
   "result": {
-    "tag": "forge:wires/pink_slime"
+    "tag": "c:wires/pink_slime"
   },
   "cooling_time": 46
 }

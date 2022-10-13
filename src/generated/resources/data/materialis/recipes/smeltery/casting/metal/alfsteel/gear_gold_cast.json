@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:gears/alfsteel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:gears/alfsteel"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/gear"
   },
   "fluid": {
-    "tag": "forge:molten_alfsteel",
-    "amount": 360
+    "tag": "c:molten_alfsteel",
+    "amount": 36000
   },
   "result": {
-    "tag": "forge:gears/alfsteel"
+    "tag": "c:gears/alfsteel"
   },
   "cooling_time": 157
 }

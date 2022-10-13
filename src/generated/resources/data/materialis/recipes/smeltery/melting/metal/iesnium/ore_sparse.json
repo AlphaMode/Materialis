@@ -1,24 +1,23 @@
 {
   "type": "forge:conditional",
-  "conditions": [
+  "fabric:load_conditions": [
     {
+      "condition": "tconstruct:tag_intersection_present",
       "registry": "minecraft:item",
       "tags": [
-        "forge:ores/iesnium",
-        "forge:ore_rates/sparse"
-      ],
-      "type": "tconstruct:tag_intersection_present"
+        "c:ores/iesnium",
+        "c:ore_rates/sparse"
+      ]
     }
   ],
   "recipes": [
     {
-      "conditions": [
+      "fabric:load_conditions": [
         {
-          "value": {
-            "tag": "forge:ingots/silver",
-            "type": "forge:tag_empty"
-          },
-          "type": "forge:not"
+          "condition": "fabric:item_tags_populated",
+          "values": [
+            "c:ingots/silver"
+          ]
         }
       ],
       "recipe": {
@@ -28,31 +27,31 @@
           "type": "forge:intersection",
           "children": [
             {
-              "tag": "forge:ores/iesnium"
+              "tag": "c:ores/iesnium"
             },
             {
-              "tag": "forge:ore_rates/sparse"
+              "tag": "c:ore_rates/sparse"
             }
           ]
         },
         "result": {
           "fluid": "materialis:molten_iesnium",
-          "amount": 90
+          "amount": 9000
         },
         "temperature": 1090,
         "time": 103,
         "byproducts": [
           {
             "fluid": "tconstruct:molten_silver",
-            "amount": 30
+            "amount": 3000
           }
         ]
       }
     },
     {
-      "conditions": [
+      "fabric:load_conditions": [
         {
-          "type": "forge:true"
+          "condition": "porting_lib:true"
         }
       ],
       "recipe": {
@@ -62,16 +61,16 @@
           "type": "forge:intersection",
           "children": [
             {
-              "tag": "forge:ores/iesnium"
+              "tag": "c:ores/iesnium"
             },
             {
-              "tag": "forge:ore_rates/sparse"
+              "tag": "c:ore_rates/sparse"
             }
           ]
         },
         "result": {
           "fluid": "materialis:molten_iesnium",
-          "amount": 90
+          "amount": 9000
         },
         "temperature": 1090,
         "time": 103

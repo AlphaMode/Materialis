@@ -2,9 +2,9 @@
   "type": "forge:conditional",
   "recipes": [
     {
-      "conditions": [
+      "fabric:load_conditions": [
         {
-          "type": "forge:true"
+          "condition": "porting_lib:true"
         }
       ],
       "recipe": {
@@ -16,7 +16,7 @@
         ],
         "key": {
           "X": {
-            "tag": "forge:nuggets/fairy"
+            "tag": "c:nuggets/fairy"
           },
           "Y": {
             "item": "materialis:fairy_nugget"

@@ -1,29 +1,33 @@
 {
   "type": "tconstruct:modifier",
-  "conditions": [
+  "fabric:load_conditions": [
     {
+      "condition": "fabric:or",
       "values": [
         {
-          "modid": "draconicevolution",
-          "type": "forge:mod_loaded"
+          "condition": "fabric:all_mods_loaded",
+          "values": [
+            "draconicevolution"
+          ]
         },
         {
-          "modid": "redstone_arsenal",
-          "type": "forge:mod_loaded"
+          "condition": "fabric:all_mods_loaded",
+          "values": [
+            "redstone_arsenal"
+          ]
         }
-      ],
-      "type": "forge:or"
+      ]
     }
   ],
   "inputs": [
     {
-      "tag": "forge:dusts/redstone"
+      "tag": "c:dusts/redstone"
     },
     {
       "item": "draconicevolution:draconium_core"
     },
     {
-      "tag": "forge:dusts/redstone"
+      "tag": "c:dusts/redstone"
     }
   ],
   "tools": {

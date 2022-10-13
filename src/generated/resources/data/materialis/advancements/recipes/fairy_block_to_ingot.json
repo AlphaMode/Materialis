@@ -1,9 +1,9 @@
 {
   "advancements": [
     {
-      "conditions": [
+      "fabric:load_conditions": [
         {
-          "type": "forge:true"
+          "condition": "porting_lib:true"
         }
       ],
       "advancement": {

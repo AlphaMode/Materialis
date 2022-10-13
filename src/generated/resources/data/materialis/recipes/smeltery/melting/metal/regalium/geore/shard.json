@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:geore_shards/regalium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:geore_shards/regalium"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:geore_shards/regalium"
+    "tag": "c:geore_shards/regalium"
   },
   "result": {
     "fluid": "materialis:molten_regalium",
-    "amount": 90
+    "amount": 9000
   },
   "temperature": 620,
   "time": 54

@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:casting_basin",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:storage_blocks/quicksilver",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:storage_blocks/quicksilver"
+      ]
     }
   ],
   "fluid": {
-    "tag": "forge:molten_quicksilver",
-    "amount": 810
+    "tag": "c:molten_quicksilver",
+    "amount": 81000
   },
   "result": {
-    "tag": "forge:storage_blocks/quicksilver"
+    "tag": "c:storage_blocks/quicksilver"
   },
   "cooling_time": 139
 }

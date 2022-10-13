@@ -1,12 +1,11 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:rods/fairy",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:rods/fairy"
+      ]
     }
   ],
   "cast": {
@@ -14,10 +13,10 @@
   },
   "fluid": {
     "tag": "materialis:molten_fairy",
-    "amount": 45
+    "amount": 4500
   },
   "result": {
-    "tag": "forge:rods/fairy"
+    "tag": "c:rods/fairy"
   },
   "cooling_time": 41
 }

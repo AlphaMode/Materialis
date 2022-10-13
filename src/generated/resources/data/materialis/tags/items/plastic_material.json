@@ -2,7 +2,7 @@
   "replace": false,
   "values": [
     {
-      "id": "#forge:plastic",
+      "id": "#c:plastic",
       "required": false
     },
     {

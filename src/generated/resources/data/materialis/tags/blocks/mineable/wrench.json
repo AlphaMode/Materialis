@@ -2,18 +2,18 @@
   "replace": false,
   "values": [
     {
-      "id": "#forge:mineable/wrench",
+      "id": "#c:mineable/wrench",
       "required": false
     },
     {
-      "id": "#forge:mineable/hammer",
+      "id": "#c:mineable/hammer",
       "required": false
     },
-    "#forge:storage_blocks",
-    "#forge:barrels",
-    "#forge:chests",
-    "#forge:glass",
-    "#forge:glass_panes",
+    "#c:storage_blocks",
+    "#c:barrels",
+    "#c:chests",
+    "#c:glass",
+    "#c:glass_panes",
     "#minecraft:buttons",
     "#minecraft:doors",
     "#minecraft:trapdoors",

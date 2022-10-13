@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:rods/draconium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:rods/draconium"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:rods/draconium"
+    "tag": "c:rods/draconium"
   },
   "result": {
     "fluid": "materialis:molten_draconium",
-    "amount": 45
+    "amount": 4500
   },
   "temperature": 1050,
   "time": 14

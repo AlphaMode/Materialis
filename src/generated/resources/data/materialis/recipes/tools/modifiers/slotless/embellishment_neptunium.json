@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:swappable_modifier",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/neptunium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/neptunium"
+      ]
     }
   ],
   "inputs": [
     {
-      "tag": "forge:ingots/neptunium"
+      "tag": "c:ingots/neptunium"
     },
     {
-      "tag": "forge:ingots/neptunium"
+      "tag": "c:ingots/neptunium"
     },
     {
-      "tag": "forge:ingots/neptunium"
+      "tag": "c:ingots/neptunium"
     }
   ],
   "tools": [

@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:gears/arcane_gold",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:gears/arcane_gold"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/gear"
   },
   "fluid": {
-    "tag": "forge:molten_arcane_gold",
-    "amount": 360
+    "tag": "c:molten_arcane_gold",
+    "amount": 36000
   },
   "result": {
-    "tag": "forge:gears/arcane_gold"
+    "tag": "c:gears/arcane_gold"
   },
   "cooling_time": 112
 }

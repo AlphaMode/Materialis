@@ -1,16 +1,15 @@
 {
   "type": "tconstruct:material",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:nuggets/terrasteel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:nuggets/terrasteel"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:nuggets/terrasteel"
+    "tag": "c:nuggets/terrasteel"
   },
   "value": 1,
   "needed": 9,

@@ -1,9 +1,11 @@
 {
   "type": "tconstruct:damagable_melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "modid": "psi",
-      "type": "forge:mod_loaded"
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "psi"
+      ]
     }
   ],
   "ingredient": {
@@ -11,7 +13,8 @@
   },
   "result": {
     "fluid": "materialis:molten_psimetal",
-    "amount": 540
+    "amount": 54000,
+    "unit_size": 1000
   },
   "temperature": 750,
   "time": 143

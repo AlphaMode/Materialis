@@ -1,9 +1,11 @@
 {
   "type": "tconstruct:modifier_salvage",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "modid": "psi",
-      "type": "forge:mod_loaded"
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "psi"
+      ]
     }
   ],
   "tools": {

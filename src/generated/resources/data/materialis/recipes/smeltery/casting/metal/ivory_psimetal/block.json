@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:casting_basin",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:storage_blocks/ivory_psimetal",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:storage_blocks/ivory_psimetal"
+      ]
     }
   ],
   "fluid": {
-    "tag": "forge:molten_ivory_psimetal",
-    "amount": 810
+    "tag": "c:molten_ivory_psimetal",
+    "amount": 81000
   },
   "result": {
-    "tag": "forge:storage_blocks/ivory_psimetal"
+    "tag": "c:storage_blocks/ivory_psimetal"
   },
   "cooling_time": 210
 }

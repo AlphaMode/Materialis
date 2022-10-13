@@ -1,12 +1,12 @@
 {
   "replace": false,
   "values": [
-    "#forge:molten_quicksilver",
-    "#forge:molten_cloggrum",
-    "#forge:molten_froststeel",
-    "#forge:molten_utherium",
-    "#forge:molten_regalium",
-    "#forge:molten_iesnium",
-    "#forge:molten_manasteel"
+    "#c:molten_quicksilver",
+    "#c:molten_cloggrum",
+    "#c:molten_froststeel",
+    "#c:molten_utherium",
+    "#c:molten_regalium",
+    "#c:molten_iesnium",
+    "#c:molten_manasteel"
   ]
 }

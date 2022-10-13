@@ -1,12 +1,11 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:wires/cloggrum",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:wires/cloggrum"
+      ]
     }
   ],
   "cast": {
@@ -14,11 +13,11 @@
   },
   "cast_consumed": true,
   "fluid": {
-    "tag": "forge:molten_cloggrum",
-    "amount": 45
+    "tag": "c:molten_cloggrum",
+    "amount": 4500
   },
   "result": {
-    "tag": "forge:wires/cloggrum"
+    "tag": "c:wires/cloggrum"
   },
   "cooling_time": 39
 }

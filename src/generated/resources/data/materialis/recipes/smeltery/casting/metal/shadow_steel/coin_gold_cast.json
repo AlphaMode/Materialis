@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:coins/shadow_steel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:coins/shadow_steel"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/coin"
   },
   "fluid": {
-    "tag": "forge:molten_shadow_steel",
-    "amount": 30
+    "tag": "c:molten_shadow_steel",
+    "amount": 3000
   },
   "result": {
-    "tag": "forge:coins/shadow_steel"
+    "tag": "c:coins/shadow_steel"
   },
   "cooling_time": 43
 }

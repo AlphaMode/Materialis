@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:wires/froststeel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:wires/froststeel"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/wire"
   },
   "fluid": {
-    "tag": "forge:molten_froststeel",
-    "amount": 45
+    "tag": "c:molten_froststeel",
+    "amount": 4500
   },
   "result": {
-    "tag": "forge:wires/froststeel"
+    "tag": "c:wires/froststeel"
   },
   "cooling_time": 44
 }

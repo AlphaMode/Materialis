@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:swappable_modifier",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/utherium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/utherium"
+      ]
     }
   ],
   "inputs": [
     {
-      "tag": "forge:ingots/utherium"
+      "tag": "c:ingots/utherium"
     },
     {
-      "tag": "forge:ingots/utherium"
+      "tag": "c:ingots/utherium"
     },
     {
-      "tag": "forge:ingots/utherium"
+      "tag": "c:ingots/utherium"
     }
   ],
   "tools": [

@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:swappable_modifier",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/ivory_psimetal",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/ivory_psimetal"
+      ]
     }
   ],
   "inputs": [
     {
-      "tag": "forge:ingots/ivory_psimetal"
+      "tag": "c:ingots/ivory_psimetal"
     },
     {
-      "tag": "forge:ingots/ivory_psimetal"
+      "tag": "c:ingots/ivory_psimetal"
     },
     {
-      "tag": "forge:ingots/ivory_psimetal"
+      "tag": "c:ingots/ivory_psimetal"
     }
   ],
   "tools": [

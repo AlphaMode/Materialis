@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:rods/draconium_awakened",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:rods/draconium_awakened"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/rod"
   },
   "fluid": {
-    "tag": "forge:molten_draconium_awakened",
-    "amount": 45
+    "tag": "c:molten_draconium_awakened",
+    "amount": 4500
   },
   "result": {
-    "tag": "forge:rods/draconium_awakened"
+    "tag": "c:rods/draconium_awakened"
   },
   "cooling_time": 56
 }

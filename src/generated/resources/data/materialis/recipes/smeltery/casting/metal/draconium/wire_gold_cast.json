@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:wires/draconium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:wires/draconium"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/wire"
   },
   "fluid": {
-    "tag": "forge:molten_draconium",
-    "amount": 45
+    "tag": "c:molten_draconium",
+    "amount": 4500
   },
   "result": {
-    "tag": "forge:wires/draconium"
+    "tag": "c:wires/draconium"
   },
   "cooling_time": 48
 }

@@ -2,13 +2,13 @@
   "type": "tconstruct:swappable_modifier",
   "inputs": [
     {
-      "tag": "forge:ingots/fairy"
+      "tag": "c:ingots/fairy"
     },
     {
-      "tag": "forge:ingots/fairy"
+      "tag": "c:ingots/fairy"
     },
     {
-      "tag": "forge:ingots/fairy"
+      "tag": "c:ingots/fairy"
     }
   ],
   "tools": [

@@ -1,12 +1,12 @@
 {
   "type": "tconstruct:material",
   "ingredient": {
-    "tag": "forge:storage_blocks/fairy"
+    "tag": "c:storage_blocks/fairy"
   },
   "value": 9,
   "needed": 1,
   "material": "materialis:fairy",
   "leftover": {
-    "tag": "forge:ingots/fairy"
+    "tag": "c:ingots/fairy"
   }
 }

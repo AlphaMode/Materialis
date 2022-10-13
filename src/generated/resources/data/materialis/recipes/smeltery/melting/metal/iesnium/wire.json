@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:wires/iesnium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:wires/iesnium"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:wires/iesnium"
+    "tag": "c:wires/iesnium"
   },
   "result": {
     "fluid": "materialis:molten_iesnium",
-    "amount": 45
+    "amount": 4500
   },
   "temperature": 1090,
   "time": 14

@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:sheetmetals/elementium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:sheetmetals/elementium"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:sheetmetals/elementium"
+    "tag": "c:sheetmetals/elementium"
   },
   "result": {
     "fluid": "materialis:molten_elementium",
-    "amount": 90
+    "amount": 9000
   },
   "temperature": 1160,
   "time": 71

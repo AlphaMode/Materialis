@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:swappable_modifier",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/forgotten_metal",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/forgotten_metal"
+      ]
     }
   ],
   "inputs": [
     {
-      "tag": "forge:ingots/forgotten_metal"
+      "tag": "c:ingots/forgotten_metal"
     },
     {
-      "tag": "forge:ingots/forgotten_metal"
+      "tag": "c:ingots/forgotten_metal"
     },
     {
-      "tag": "forge:ingots/forgotten_metal"
+      "tag": "c:ingots/forgotten_metal"
     }
   ],
   "tools": [

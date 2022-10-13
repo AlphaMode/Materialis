@@ -1,12 +1,11 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:wires/fairy",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:wires/fairy"
+      ]
     }
   ],
   "cast": {
@@ -15,10 +14,10 @@
   "cast_consumed": true,
   "fluid": {
     "tag": "materialis:molten_fairy",
-    "amount": 45
+    "amount": 4500
   },
   "result": {
-    "tag": "forge:wires/fairy"
+    "tag": "c:wires/fairy"
   },
   "cooling_time": 41
 }

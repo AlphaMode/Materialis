@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:gears/quicksilver",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:gears/quicksilver"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:gears/quicksilver"
+    "tag": "c:gears/quicksilver"
   },
   "result": {
     "fluid": "materialis:molten_quicksilver",
-    "amount": 360
+    "amount": 36000
   },
   "temperature": 400,
   "time": 92

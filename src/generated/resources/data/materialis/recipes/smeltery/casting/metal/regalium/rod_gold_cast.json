@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:rods/regalium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:rods/regalium"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/rod"
   },
   "fluid": {
-    "tag": "forge:molten_regalium",
-    "amount": 45
+    "tag": "c:molten_regalium",
+    "amount": 4500
   },
   "result": {
-    "tag": "forge:rods/regalium"
+    "tag": "c:rods/regalium"
   },
   "cooling_time": 38
 }

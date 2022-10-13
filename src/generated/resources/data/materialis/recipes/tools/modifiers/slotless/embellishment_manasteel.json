@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:swappable_modifier",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/manasteel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/manasteel"
+      ]
     }
   ],
   "inputs": [
     {
-      "tag": "forge:ingots/manasteel"
+      "tag": "c:ingots/manasteel"
     },
     {
-      "tag": "forge:ingots/manasteel"
+      "tag": "c:ingots/manasteel"
     },
     {
-      "tag": "forge:ingots/manasteel"
+      "tag": "c:ingots/manasteel"
     }
   ],
   "tools": [

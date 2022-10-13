@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:geore_large_buds/iesnium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:geore_large_buds/iesnium"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:geore_large_buds/iesnium"
+    "tag": "c:geore_large_buds/iesnium"
   },
   "result": {
     "fluid": "materialis:molten_iesnium",
-    "amount": 270
+    "amount": 27000
   },
   "temperature": 1090,
   "time": 138

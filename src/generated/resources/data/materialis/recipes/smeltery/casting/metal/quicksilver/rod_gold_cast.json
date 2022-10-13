@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:rods/quicksilver",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:rods/quicksilver"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/rod"
   },
   "fluid": {
-    "tag": "forge:molten_quicksilver",
-    "amount": 45
+    "tag": "c:molten_quicksilver",
+    "amount": 4500
   },
   "result": {
-    "tag": "forge:rods/quicksilver"
+    "tag": "c:rods/quicksilver"
   },
   "cooling_time": 33
 }

@@ -1,9 +1,11 @@
 {
   "type": "tconstruct:modifier",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "modid": "ars_nouveau",
-      "type": "forge:mod_loaded"
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "ars_nouveau"
+      ]
     }
   ],
   "inputs": [
@@ -11,7 +13,7 @@
       "item": "ars_nouveau:air_essence"
     },
     {
-      "tag": "forge:rods/blaze"
+      "tag": "c:rods/blaze"
     },
     {
       "item": "ars_nouveau:fire_essence"

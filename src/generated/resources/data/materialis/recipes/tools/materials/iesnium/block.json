@@ -1,21 +1,20 @@
 {
   "type": "tconstruct:material",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:storage_blocks/iesnium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:storage_blocks/iesnium"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:storage_blocks/iesnium"
+    "tag": "c:storage_blocks/iesnium"
   },
   "value": 9,
   "needed": 1,
   "material": "materialis:iesnium",
   "leftover": {
-    "tag": "forge:ingots/iesnium"
+    "tag": "c:ingots/iesnium"
   }
 }

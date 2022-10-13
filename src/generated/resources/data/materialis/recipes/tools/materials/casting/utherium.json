@@ -2,7 +2,7 @@
   "type": "tconstruct:material_fluid",
   "fluid": {
     "tag": "materialis:molten_utherium",
-    "amount": 90
+    "amount": 9000
   },
   "temperature": 1070,
   "output": "materialis:utherium"

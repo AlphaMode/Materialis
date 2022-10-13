@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:swappable_modifier",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/flux_infused",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/flux_infused"
+      ]
     }
   ],
   "inputs": [
     {
-      "tag": "forge:ingots/flux_infused"
+      "tag": "c:ingots/flux_infused"
     },
     {
-      "tag": "forge:ingots/flux_infused"
+      "tag": "c:ingots/flux_infused"
     },
     {
-      "tag": "forge:ingots/flux_infused"
+      "tag": "c:ingots/flux_infused"
     }
   ],
   "tools": [

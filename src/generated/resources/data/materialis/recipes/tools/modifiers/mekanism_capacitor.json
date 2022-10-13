@@ -1,27 +1,33 @@
 {
   "type": "tconstruct:modifier",
-  "conditions": [
+  "fabric:load_conditions": [
     {
+      "condition": "fabric:and",
       "values": [
         {
+          "condition": "fabric:or",
           "values": [
             {
-              "modid": "draconicevolution",
-              "type": "forge:mod_loaded"
+              "condition": "fabric:all_mods_loaded",
+              "values": [
+                "draconicevolution"
+              ]
             },
             {
-              "modid": "redstone_arsenal",
-              "type": "forge:mod_loaded"
+              "condition": "fabric:all_mods_loaded",
+              "values": [
+                "redstone_arsenal"
+              ]
             }
-          ],
-          "type": "forge:or"
+          ]
         },
         {
-          "modid": "mekanism",
-          "type": "forge:mod_loaded"
+          "condition": "fabric:all_mods_loaded",
+          "values": [
+            "mekanism"
+          ]
         }
-      ],
-      "type": "forge:and"
+      ]
     }
   ],
   "inputs": [
@@ -29,7 +35,7 @@
       "item": "mekanism:alloy_infused"
     },
     {
-      "tag": "forge:ingots/gold"
+      "tag": "c:ingots/gold"
     },
     {
       "item": "mekanism:alloy_infused"

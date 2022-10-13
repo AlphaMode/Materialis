@@ -1,13 +1,13 @@
 {
   "type": "tconstruct:ore_melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
+      "condition": "tconstruct:tag_intersection_present",
       "registry": "minecraft:item",
       "tags": [
-        "forge:ores/utherium",
-        "forge:ore_rates/sparse"
-      ],
-      "type": "tconstruct:tag_intersection_present"
+        "c:ores/utherium",
+        "c:ore_rates/sparse"
+      ]
     }
   ],
   "rate": "metal",
@@ -15,23 +15,23 @@
     "type": "forge:intersection",
     "children": [
       {
-        "tag": "forge:ores/utherium"
+        "tag": "c:ores/utherium"
       },
       {
-        "tag": "forge:ore_rates/sparse"
+        "tag": "c:ore_rates/sparse"
       }
     ]
   },
   "result": {
     "fluid": "materialis:molten_utherium",
-    "amount": 90
+    "amount": 9000
   },
   "temperature": 1070,
   "time": 103,
   "byproducts": [
     {
       "fluid": "materialis:molten_froststeel",
-      "amount": 30
+      "amount": 3000
     }
   ]
 }

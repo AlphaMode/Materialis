@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:gears/froststeel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:gears/froststeel"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/gear"
   },
   "fluid": {
-    "tag": "forge:molten_froststeel",
-    "amount": 360
+    "tag": "c:molten_froststeel",
+    "amount": 36000
   },
   "result": {
-    "tag": "forge:gears/froststeel"
+    "tag": "c:gears/froststeel"
   },
   "cooling_time": 124
 }

@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:casting_basin",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:storage_blocks/refined_radiance",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:storage_blocks/refined_radiance"
+      ]
     }
   ],
   "fluid": {
-    "tag": "forge:molten_refined_radiance",
-    "amount": 810
+    "tag": "c:molten_refined_radiance",
+    "amount": 81000
   },
   "result": {
-    "tag": "forge:storage_blocks/refined_radiance"
+    "tag": "c:storage_blocks/refined_radiance"
   },
   "cooling_time": 225
 }

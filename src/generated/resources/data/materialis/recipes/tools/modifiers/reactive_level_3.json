@@ -1,9 +1,11 @@
 {
   "type": "tconstruct:modifier",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "modid": "ars_nouveau",
-      "type": "forge:mod_loaded"
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "ars_nouveau"
+      ]
     }
   ],
   "inputs": [
@@ -17,10 +19,10 @@
       "item": "ars_nouveau:manipulation_essence"
     },
     {
-      "tag": "forge:ender_pearls"
+      "tag": "c:ender_pearls"
     },
     {
-      "tag": "forge:ingots/cobalt"
+      "tag": "c:ingots/cobalt"
     }
   ],
   "tools": {

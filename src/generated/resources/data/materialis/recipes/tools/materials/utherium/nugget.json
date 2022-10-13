@@ -1,16 +1,15 @@
 {
   "type": "tconstruct:material",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:nuggets/utherium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:nuggets/utherium"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:nuggets/utherium"
+    "tag": "c:nuggets/utherium"
   },
   "value": 1,
   "needed": 9,

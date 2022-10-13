@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:coins/ivory_psimetal",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:coins/ivory_psimetal"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:coins/ivory_psimetal"
+    "tag": "c:coins/ivory_psimetal"
   },
   "result": {
     "fluid": "materialis:molten_ivory_psimetal",
-    "amount": 30
+    "amount": 3000
   },
   "temperature": 1130,
   "time": 47

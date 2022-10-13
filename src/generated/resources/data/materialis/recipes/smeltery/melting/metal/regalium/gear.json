@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:gears/regalium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:gears/regalium"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:gears/regalium"
+    "tag": "c:gears/regalium"
   },
   "result": {
     "fluid": "materialis:molten_regalium",
-    "amount": 360
+    "amount": 36000
   },
   "temperature": 620,
   "time": 108

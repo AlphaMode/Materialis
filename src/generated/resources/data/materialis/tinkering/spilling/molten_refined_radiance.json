@@ -1,11 +1,17 @@
 {
   "condition": {
-    "modid": "create",
-    "type": "forge:mod_loaded"
+    "fabric:load_conditions": [
+      {
+        "condition": "fabric:all_mods_loaded",
+        "values": [
+          "create"
+        ]
+      }
+    ]
   },
   "fluid": {
-    "tag": "forge:molten_refined_radiance",
-    "amount": 10
+    "tag": "c:molten_refined_radiance",
+    "amount": 1000
   },
   "effects": [
     {

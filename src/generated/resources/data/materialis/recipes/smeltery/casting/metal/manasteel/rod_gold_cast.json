@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:rods/manasteel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:rods/manasteel"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/rod"
   },
   "fluid": {
-    "tag": "forge:molten_manasteel",
-    "amount": 45
+    "tag": "c:molten_manasteel",
+    "amount": 4500
   },
   "result": {
-    "tag": "forge:rods/manasteel"
+    "tag": "c:rods/manasteel"
   },
   "cooling_time": 42
 }

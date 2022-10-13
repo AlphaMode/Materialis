@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:nuggets/draconium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:nuggets/draconium"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/nugget"
   },
   "fluid": {
-    "tag": "forge:molten_draconium",
-    "amount": 10
+    "tag": "c:molten_draconium",
+    "amount": 1000
   },
   "result": {
-    "tag": "forge:nuggets/draconium"
+    "tag": "c:nuggets/draconium"
   },
   "cooling_time": 23
 }

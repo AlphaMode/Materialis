@@ -1,21 +1,20 @@
 {
   "type": "tconstruct:material",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:storage_blocks/draconium_awakened",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:storage_blocks/draconium_awakened"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:storage_blocks/draconium_awakened"
+    "tag": "c:storage_blocks/draconium_awakened"
   },
   "value": 9,
   "needed": 1,
   "material": "materialis:draconium_awakened",
   "leftover": {
-    "tag": "forge:ingots/draconium_awakened"
+    "tag": "c:ingots/draconium_awakened"
   }
 }

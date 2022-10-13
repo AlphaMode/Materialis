@@ -1,16 +1,15 @@
 {
   "type": "tconstruct:material",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/brass",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/brass"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:ingots/brass"
+    "tag": "c:ingots/brass"
   },
   "value": 1,
   "needed": 1,

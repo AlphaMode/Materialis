@@ -1,24 +1,23 @@
 {
   "type": "forge:conditional",
-  "conditions": [
+  "fabric:load_conditions": [
     {
+      "condition": "tconstruct:tag_intersection_present",
       "registry": "minecraft:item",
       "tags": [
-        "forge:ores/quicksilver",
-        "forge:ore_rates/dense"
-      ],
-      "type": "tconstruct:tag_intersection_present"
+        "c:ores/quicksilver",
+        "c:ore_rates/dense"
+      ]
     }
   ],
   "recipes": [
     {
-      "conditions": [
+      "fabric:load_conditions": [
         {
-          "value": {
-            "tag": "forge:ingots/zinc",
-            "type": "forge:tag_empty"
-          },
-          "type": "forge:not"
+          "condition": "fabric:item_tags_populated",
+          "values": [
+            "c:ingots/zinc"
+          ]
         }
       ],
       "recipe": {
@@ -28,35 +27,34 @@
           "type": "forge:intersection",
           "children": [
             {
-              "tag": "forge:ores/quicksilver"
+              "tag": "c:ores/quicksilver"
             },
             {
-              "tag": "forge:ore_rates/dense"
+              "tag": "c:ore_rates/dense"
             }
           ]
         },
         "result": {
           "fluid": "materialis:molten_quicksilver",
-          "amount": 540
+          "amount": 54000
         },
         "temperature": 400,
         "time": 208,
         "byproducts": [
           {
             "fluid": "tconstruct:molten_zinc",
-            "amount": 180
+            "amount": 18000
           }
         ]
       }
     },
     {
-      "conditions": [
+      "fabric:load_conditions": [
         {
-          "value": {
-            "tag": "forge:ingots/tin",
-            "type": "forge:tag_empty"
-          },
-          "type": "forge:not"
+          "condition": "fabric:item_tags_populated",
+          "values": [
+            "c:ingots/tin"
+          ]
         }
       ],
       "recipe": {
@@ -66,31 +64,31 @@
           "type": "forge:intersection",
           "children": [
             {
-              "tag": "forge:ores/quicksilver"
+              "tag": "c:ores/quicksilver"
             },
             {
-              "tag": "forge:ore_rates/dense"
+              "tag": "c:ore_rates/dense"
             }
           ]
         },
         "result": {
           "fluid": "materialis:molten_quicksilver",
-          "amount": 540
+          "amount": 54000
         },
         "temperature": 400,
         "time": 208,
         "byproducts": [
           {
             "fluid": "tconstruct:molten_tin",
-            "amount": 180
+            "amount": 18000
           }
         ]
       }
     },
     {
-      "conditions": [
+      "fabric:load_conditions": [
         {
-          "type": "forge:true"
+          "condition": "porting_lib:true"
         }
       ],
       "recipe": {
@@ -100,16 +98,16 @@
           "type": "forge:intersection",
           "children": [
             {
-              "tag": "forge:ores/quicksilver"
+              "tag": "c:ores/quicksilver"
             },
             {
-              "tag": "forge:ore_rates/dense"
+              "tag": "c:ore_rates/dense"
             }
           ]
         },
         "result": {
           "fluid": "materialis:molten_quicksilver",
-          "amount": 540
+          "amount": 54000
         },
         "temperature": 400,
         "time": 208

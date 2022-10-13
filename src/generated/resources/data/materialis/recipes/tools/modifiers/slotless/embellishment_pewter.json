@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:swappable_modifier",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/pewter",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/pewter"
+      ]
     }
   ],
   "inputs": [
     {
-      "tag": "forge:ingots/pewter"
+      "tag": "c:ingots/pewter"
     },
     {
-      "tag": "forge:ingots/pewter"
+      "tag": "c:ingots/pewter"
     },
     {
-      "tag": "forge:ingots/pewter"
+      "tag": "c:ingots/pewter"
     }
   ],
   "tools": [

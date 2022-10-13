@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:geore_large_buds/quicksilver",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:geore_large_buds/quicksilver"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:geore_large_buds/quicksilver"
+    "tag": "c:geore_large_buds/quicksilver"
   },
   "result": {
     "fluid": "materialis:molten_quicksilver",
-    "amount": 270
+    "amount": 27000
   },
   "temperature": 400,
   "time": 92

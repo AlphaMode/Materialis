@@ -1,7 +1,7 @@
 {
   "type": "tconstruct:material",
   "ingredient": {
-    "tag": "forge:ingots/fairy"
+    "tag": "c:ingots/fairy"
   },
   "value": 1,
   "needed": 1,

@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:swappable_modifier",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/regalium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/regalium"
+      ]
     }
   ],
   "inputs": [
     {
-      "tag": "forge:ingots/regalium"
+      "tag": "c:ingots/regalium"
     },
     {
-      "tag": "forge:ingots/regalium"
+      "tag": "c:ingots/regalium"
     },
     {
-      "tag": "forge:ingots/regalium"
+      "tag": "c:ingots/regalium"
     }
   ],
   "tools": [

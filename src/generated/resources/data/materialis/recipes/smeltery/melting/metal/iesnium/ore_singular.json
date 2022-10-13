@@ -1,25 +1,24 @@
 {
   "type": "forge:conditional",
-  "conditions": [
+  "fabric:load_conditions": [
     {
+      "condition": "tconstruct:tag_difference_present",
       "registry": "minecraft:item",
-      "base": "forge:ores/iesnium",
+      "base": "c:ores/iesnium",
       "subtracted": [
-        "forge:ore_rates/sparse",
-        "forge:ore_rates/dense"
-      ],
-      "type": "tconstruct:tag_difference_present"
+        "c:ore_rates/sparse",
+        "c:ore_rates/dense"
+      ]
     }
   ],
   "recipes": [
     {
-      "conditions": [
+      "fabric:load_conditions": [
         {
-          "value": {
-            "tag": "forge:ingots/silver",
-            "type": "forge:tag_empty"
-          },
-          "type": "forge:not"
+          "condition": "fabric:item_tags_populated",
+          "values": [
+            "c:ingots/silver"
+          ]
         }
       ],
       "recipe": {
@@ -28,35 +27,35 @@
         "ingredient": {
           "type": "forge:difference",
           "base": {
-            "tag": "forge:ores/iesnium"
+            "tag": "c:ores/iesnium"
           },
           "subtracted": [
             {
-              "tag": "forge:ore_rates/sparse"
+              "tag": "c:ore_rates/sparse"
             },
             {
-              "tag": "forge:ore_rates/dense"
+              "tag": "c:ore_rates/dense"
             }
           ]
         },
         "result": {
           "fluid": "materialis:molten_iesnium",
-          "amount": 180
+          "amount": 18000
         },
         "temperature": 1090,
         "time": 172,
         "byproducts": [
           {
             "fluid": "tconstruct:molten_silver",
-            "amount": 60
+            "amount": 6000
           }
         ]
       }
     },
     {
-      "conditions": [
+      "fabric:load_conditions": [
         {
-          "type": "forge:true"
+          "condition": "porting_lib:true"
         }
       ],
       "recipe": {
@@ -65,20 +64,20 @@
         "ingredient": {
           "type": "forge:difference",
           "base": {
-            "tag": "forge:ores/iesnium"
+            "tag": "c:ores/iesnium"
           },
           "subtracted": [
             {
-              "tag": "forge:ore_rates/sparse"
+              "tag": "c:ore_rates/sparse"
             },
             {
-              "tag": "forge:ore_rates/dense"
+              "tag": "c:ore_rates/dense"
             }
           ]
         },
         "result": {
           "fluid": "materialis:molten_iesnium",
-          "amount": 180
+          "amount": 18000
         },
         "temperature": 1090,
         "time": 172

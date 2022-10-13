@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:geore_medium_buds/utherium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:geore_medium_buds/utherium"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:geore_medium_buds/utherium"
+    "tag": "c:geore_medium_buds/utherium"
   },
   "result": {
     "fluid": "materialis:molten_utherium",
-    "amount": 180
+    "amount": 18000
   },
   "temperature": 1070,
   "time": 103

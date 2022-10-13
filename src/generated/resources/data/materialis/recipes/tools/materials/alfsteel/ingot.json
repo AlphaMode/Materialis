@@ -1,16 +1,15 @@
 {
   "type": "tconstruct:material",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/alfsteel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/alfsteel"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:ingots/alfsteel"
+    "tag": "c:ingots/alfsteel"
   },
   "value": 1,
   "needed": 1,

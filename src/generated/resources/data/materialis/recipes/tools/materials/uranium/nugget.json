@@ -1,16 +1,15 @@
 {
   "type": "tconstruct:material",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:nuggets/uranium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:nuggets/uranium"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:nuggets/uranium"
+    "tag": "c:nuggets/uranium"
   },
   "value": 1,
   "needed": 9,

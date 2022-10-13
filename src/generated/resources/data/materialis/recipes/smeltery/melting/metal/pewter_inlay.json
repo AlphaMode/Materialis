@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:inlays/pewter",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:inlays/pewter"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:inlays/pewter"
+    "tag": "c:inlays/pewter"
   },
   "result": {
     "fluid": "tconstruct:molten_pewter",
-    "amount": 180
+    "amount": 18000
   },
   "temperature": 400,
   "time": 69

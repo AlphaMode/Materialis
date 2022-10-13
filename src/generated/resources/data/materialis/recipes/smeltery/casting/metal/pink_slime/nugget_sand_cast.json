@@ -1,12 +1,11 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:nuggets/pink_slime",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:nuggets/pink_slime"
+      ]
     }
   ],
   "cast": {
@@ -14,11 +13,11 @@
   },
   "cast_consumed": true,
   "fluid": {
-    "tag": "forge:molten_pink_slime",
-    "amount": 10
+    "tag": "c:molten_pink_slime",
+    "amount": 1000
   },
   "result": {
-    "tag": "forge:nuggets/pink_slime"
+    "tag": "c:nuggets/pink_slime"
   },
   "cooling_time": 22
 }

@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:rods/pink_slime",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:rods/pink_slime"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/rod"
   },
   "fluid": {
-    "tag": "forge:molten_pink_slime",
-    "amount": 45
+    "tag": "c:molten_pink_slime",
+    "amount": 4500
   },
   "result": {
-    "tag": "forge:rods/pink_slime"
+    "tag": "c:rods/pink_slime"
   },
   "cooling_time": 46
 }

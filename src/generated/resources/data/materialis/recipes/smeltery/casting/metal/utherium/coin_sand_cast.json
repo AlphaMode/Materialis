@@ -1,12 +1,11 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:coins/utherium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:coins/utherium"
+      ]
     }
   ],
   "cast": {
@@ -14,11 +13,11 @@
   },
   "cast_consumed": true,
   "fluid": {
-    "tag": "forge:molten_utherium",
-    "amount": 30
+    "tag": "c:molten_utherium",
+    "amount": 3000
   },
   "result": {
-    "tag": "forge:coins/utherium"
+    "tag": "c:coins/utherium"
   },
   "cooling_time": 39
 }

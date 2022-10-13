@@ -1,19 +1,18 @@
 {
   "type": "tconstruct:molding_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:inlays",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:inlays"
+      ]
     }
   ],
   "material": {
     "item": "tconstruct:blank_red_sand_cast"
   },
   "pattern": {
-    "tag": "forge:inlays"
+    "tag": "c:inlays"
   },
   "result": "materialis:inlay_red_sand_cast"
 }

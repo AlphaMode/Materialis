@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "#c:storage_blocks/fairy",
+    "#c:storage_blocks/starmetal",
+    "#c:storage_blocks/raw_cloggrum",
+    "#c:storage_blocks/raw_froststeel",
+    "#c:storage_blocks/alfsteel",
+    "#c:storage_blocks/raw_elementium",
+    "#c:storage_blocks/flux_infused"
+  ]
+}

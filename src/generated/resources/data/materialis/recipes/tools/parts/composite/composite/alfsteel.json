@@ -1,15 +1,17 @@
 {
   "type": "tconstruct:material_fluid",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "modid": "mythicbotany",
-      "type": "forge:mod_loaded"
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "mythicbotany"
+      ]
     }
   ],
   "input": "materialis:terrasteel",
   "fluid": {
     "tag": "materialis:molten_alfsteel",
-    "amount": 30
+    "amount": 3000
   },
   "temperature": 1440,
   "output": "materialis:alfsteel"

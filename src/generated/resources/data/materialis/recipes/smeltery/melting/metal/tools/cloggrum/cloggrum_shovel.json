@@ -1,9 +1,11 @@
 {
   "type": "tconstruct:damagable_melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "modid": "undergarden",
-      "type": "forge:mod_loaded"
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "undergarden"
+      ]
     }
   ],
   "ingredient": {
@@ -11,7 +13,8 @@
   },
   "result": {
     "fluid": "materialis:molten_cloggrum",
-    "amount": 90
+    "amount": 9000,
+    "unit_size": 1000
   },
   "temperature": 650,
   "time": 55

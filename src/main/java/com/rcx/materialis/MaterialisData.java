@@ -34,9 +34,9 @@ public class MaterialisData implements DataGeneratorEntrypoint {
         gen.addProvider(new MaterialisRenderInfo(gen, materialSprites));
         gen.addProvider(new GeneratorPartTextureJsonGenerator(gen, Materialis.modID, partSprites));
         //generate tinkers parts with materialis materials
-        gen.addProvider(new MaterialPartTextureGenerator(gen, existingFileHelper, new TinkerPartSpriteProvider(), materialSprites));
-        //generate materialis parts with tinkers and materialis materials
-        gen.addProvider(new MaterialPartTextureGenerator(gen, existingFileHelper, partSprites, materialSprites, tinkerMaterialSprites));
+//        gen.addProvider(new MaterialPartTextureGenerator(gen, existingFileHelper, new TinkerPartSpriteProvider(), materialSprites));
+//        //generate materialis parts with tinkers and materialis materials
+//        gen.addProvider(new MaterialPartTextureGenerator(gen, existingFileHelper, partSprites, materialSprites, tinkerMaterialSprites));
 
         gen.addProvider(new MaterialisLootTables(gen));
         gen.addProvider(new MaterialisRecipes(gen));

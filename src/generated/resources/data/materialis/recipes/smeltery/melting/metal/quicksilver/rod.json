@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:rods/quicksilver",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:rods/quicksilver"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:rods/quicksilver"
+    "tag": "c:rods/quicksilver"
   },
   "result": {
     "fluid": "materialis:molten_quicksilver",
-    "amount": 45
+    "amount": 4500
   },
   "temperature": 400,
   "time": 9

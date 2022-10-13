@@ -1,16 +1,15 @@
 {
   "type": "tconstruct:material",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/psimetal",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/psimetal"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:ingots/psimetal"
+    "tag": "c:ingots/psimetal"
   },
   "value": 1,
   "needed": 1,

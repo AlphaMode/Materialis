@@ -1,16 +1,15 @@
 {
   "type": "tconstruct:material",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/elementium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/elementium"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:ingots/elementium"
+    "tag": "c:ingots/elementium"
   },
   "value": 1,
   "needed": 1,

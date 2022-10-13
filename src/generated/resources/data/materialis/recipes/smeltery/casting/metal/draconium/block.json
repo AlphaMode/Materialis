@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:casting_basin",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:storage_blocks/draconium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:storage_blocks/draconium"
+      ]
     }
   ],
   "fluid": {
-    "tag": "forge:molten_draconium",
-    "amount": 810
+    "tag": "c:molten_draconium",
+    "amount": 81000
   },
   "result": {
-    "tag": "forge:storage_blocks/draconium"
+    "tag": "c:storage_blocks/draconium"
   },
   "cooling_time": 203
 }

@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:swappable_modifier",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/ebony_psimetal",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/ebony_psimetal"
+      ]
     }
   ],
   "inputs": [
     {
-      "tag": "forge:ingots/ebony_psimetal"
+      "tag": "c:ingots/ebony_psimetal"
     },
     {
-      "tag": "forge:ingots/ebony_psimetal"
+      "tag": "c:ingots/ebony_psimetal"
     },
     {
-      "tag": "forge:ingots/ebony_psimetal"
+      "tag": "c:ingots/ebony_psimetal"
     }
   ],
   "tools": [

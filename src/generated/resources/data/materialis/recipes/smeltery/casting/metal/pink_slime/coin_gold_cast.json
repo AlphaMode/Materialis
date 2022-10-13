@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:coins/pink_slime",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:coins/pink_slime"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/coin"
   },
   "fluid": {
-    "tag": "forge:molten_pink_slime",
-    "amount": 30
+    "tag": "c:molten_pink_slime",
+    "amount": 3000
   },
   "result": {
-    "tag": "forge:coins/pink_slime"
+    "tag": "c:coins/pink_slime"
   },
   "cooling_time": 38
 }

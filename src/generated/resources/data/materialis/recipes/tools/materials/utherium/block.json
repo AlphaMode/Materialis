@@ -1,21 +1,20 @@
 {
   "type": "tconstruct:material",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:storage_blocks/utherium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:storage_blocks/utherium"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:storage_blocks/utherium"
+    "tag": "c:storage_blocks/utherium"
   },
   "value": 9,
   "needed": 1,
   "material": "materialis:utherium",
   "leftover": {
-    "tag": "forge:ingots/utherium"
+    "tag": "c:ingots/utherium"
   }
 }

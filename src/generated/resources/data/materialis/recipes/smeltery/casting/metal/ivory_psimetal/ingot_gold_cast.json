@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/ivory_psimetal",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/ivory_psimetal"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/ingot"
   },
   "fluid": {
-    "tag": "forge:molten_ivory_psimetal",
-    "amount": 90
+    "tag": "c:molten_ivory_psimetal",
+    "amount": 9000
   },
   "result": {
-    "tag": "forge:ingots/ivory_psimetal"
+    "tag": "c:ingots/ivory_psimetal"
   },
   "cooling_time": 70
 }

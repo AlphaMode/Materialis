@@ -1,12 +1,11 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/draconium_awakened",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/draconium_awakened"
+      ]
     }
   ],
   "cast": {
@@ -14,11 +13,11 @@
   },
   "cast_consumed": true,
   "fluid": {
-    "tag": "forge:molten_draconium_awakened",
-    "amount": 90
+    "tag": "c:molten_draconium_awakened",
+    "amount": 9000
   },
   "result": {
-    "tag": "forge:ingots/draconium_awakened"
+    "tag": "c:ingots/draconium_awakened"
   },
   "cooling_time": 79
 }

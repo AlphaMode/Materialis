@@ -1,9 +1,11 @@
 {
   "type": "tconstruct:overslime_modifier",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "modid": "industrialforegoing",
-      "type": "forge:mod_loaded"
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "industrialforegoing"
+      ]
     }
   ],
   "ingredient": {

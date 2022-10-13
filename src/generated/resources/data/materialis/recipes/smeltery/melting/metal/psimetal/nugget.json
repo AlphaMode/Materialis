@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:nuggets/psimetal",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:nuggets/psimetal"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:nuggets/psimetal"
+    "tag": "c:nuggets/psimetal"
   },
   "result": {
     "fluid": "materialis:molten_psimetal",
-    "amount": 10
+    "amount": 1000
   },
   "temperature": 750,
   "time": 20

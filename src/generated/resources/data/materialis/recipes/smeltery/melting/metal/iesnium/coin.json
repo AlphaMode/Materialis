@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:coins/iesnium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:coins/iesnium"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:coins/iesnium"
+    "tag": "c:coins/iesnium"
   },
   "result": {
     "fluid": "materialis:molten_iesnium",
-    "amount": 30
+    "amount": 3000
   },
   "temperature": 1090,
   "time": 46

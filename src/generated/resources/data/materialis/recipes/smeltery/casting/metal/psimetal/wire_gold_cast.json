@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:wires/psimetal",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:wires/psimetal"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/wire"
   },
   "fluid": {
-    "tag": "forge:molten_psimetal",
-    "amount": 45
+    "tag": "c:molten_psimetal",
+    "amount": 4500
   },
   "result": {
-    "tag": "forge:wires/psimetal"
+    "tag": "c:wires/psimetal"
   },
   "cooling_time": 41
 }

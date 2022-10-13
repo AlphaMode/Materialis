@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:coins/psimetal",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:coins/psimetal"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:coins/psimetal"
+    "tag": "c:coins/psimetal"
   },
   "result": {
     "fluid": "materialis:molten_psimetal",
-    "amount": 30
+    "amount": 3000
   },
   "temperature": 750,
   "time": 39

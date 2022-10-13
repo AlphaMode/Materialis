@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:swappable_modifier",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/froststeel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/froststeel"
+      ]
     }
   ],
   "inputs": [
     {
-      "tag": "forge:ingots/froststeel"
+      "tag": "c:ingots/froststeel"
     },
     {
-      "tag": "forge:ingots/froststeel"
+      "tag": "c:ingots/froststeel"
     },
     {
-      "tag": "forge:ingots/froststeel"
+      "tag": "c:ingots/froststeel"
     }
   ],
   "tools": [

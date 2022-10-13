@@ -1,16 +1,22 @@
 {
   "condition": {
-    "values": [
+    "fabric:load_conditions": [
       {
-        "prop": "force_integration_materials",
-        "type": "tconstruct:config"
-      },
-      {
-        "modid": "botania",
-        "type": "forge:mod_loaded"
+        "condition": "fabric:or",
+        "values": [
+          {
+            "condition": "tconstruct:config",
+            "prop": "force_integration_materials"
+          },
+          {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+              "botania"
+            ]
+          }
+        ]
       }
-    ],
-    "type": "forge:or"
+    ]
   },
   "craftable": true,
   "tier": 1,

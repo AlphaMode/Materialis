@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:nuggets/alfsteel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:nuggets/alfsteel"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:nuggets/alfsteel"
+    "tag": "c:nuggets/alfsteel"
   },
   "result": {
     "fluid": "materialis:molten_alfsteel",
-    "amount": 10
+    "amount": 1000
   },
   "temperature": 1440,
   "time": 26

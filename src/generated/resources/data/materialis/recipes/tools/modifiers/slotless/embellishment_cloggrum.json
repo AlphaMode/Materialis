@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:swappable_modifier",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/cloggrum",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/cloggrum"
+      ]
     }
   ],
   "inputs": [
     {
-      "tag": "forge:ingots/cloggrum"
+      "tag": "c:ingots/cloggrum"
     },
     {
-      "tag": "forge:ingots/cloggrum"
+      "tag": "c:ingots/cloggrum"
     },
     {
-      "tag": "forge:ingots/cloggrum"
+      "tag": "c:ingots/cloggrum"
     }
   ],
   "tools": [

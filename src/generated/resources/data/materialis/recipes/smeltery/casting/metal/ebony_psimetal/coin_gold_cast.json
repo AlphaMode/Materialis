@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:coins/ebony_psimetal",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:coins/ebony_psimetal"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/coin"
   },
   "fluid": {
-    "tag": "forge:molten_ebony_psimetal",
-    "amount": 30
+    "tag": "c:molten_ebony_psimetal",
+    "amount": 3000
   },
   "result": {
-    "tag": "forge:coins/ebony_psimetal"
+    "tag": "c:coins/ebony_psimetal"
   },
   "cooling_time": 40
 }

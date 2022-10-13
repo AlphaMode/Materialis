@@ -1,16 +1,15 @@
 {
   "type": "tconstruct:material",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:nuggets/shadow_steel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:nuggets/shadow_steel"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:nuggets/shadow_steel"
+    "tag": "c:nuggets/shadow_steel"
   },
   "value": 1,
   "needed": 9,

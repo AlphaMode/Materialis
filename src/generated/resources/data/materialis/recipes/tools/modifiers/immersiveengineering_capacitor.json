@@ -1,38 +1,44 @@
 {
   "type": "tconstruct:modifier",
-  "conditions": [
+  "fabric:load_conditions": [
     {
+      "condition": "fabric:and",
       "values": [
         {
+          "condition": "fabric:or",
           "values": [
             {
-              "modid": "draconicevolution",
-              "type": "forge:mod_loaded"
+              "condition": "fabric:all_mods_loaded",
+              "values": [
+                "draconicevolution"
+              ]
             },
             {
-              "modid": "redstone_arsenal",
-              "type": "forge:mod_loaded"
+              "condition": "fabric:all_mods_loaded",
+              "values": [
+                "redstone_arsenal"
+              ]
             }
-          ],
-          "type": "forge:or"
+          ]
         },
         {
-          "modid": "immersiveengineering",
-          "type": "forge:mod_loaded"
+          "condition": "fabric:all_mods_loaded",
+          "values": [
+            "immersiveengineering"
+          ]
         }
-      ],
-      "type": "forge:and"
+      ]
     }
   ],
   "inputs": [
     {
-      "tag": "forge:ingots/lead"
+      "tag": "c:ingots/lead"
     },
     {
       "item": "immersiveengineering:wirecoil_copper"
     },
     {
-      "tag": "forge:dusts/redstone"
+      "tag": "c:dusts/redstone"
     }
   ],
   "tools": {

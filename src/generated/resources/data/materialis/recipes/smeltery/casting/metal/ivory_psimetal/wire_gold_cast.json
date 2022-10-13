@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:wires/ivory_psimetal",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:wires/ivory_psimetal"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/wire"
   },
   "fluid": {
-    "tag": "forge:molten_ivory_psimetal",
-    "amount": 45
+    "tag": "c:molten_ivory_psimetal",
+    "amount": 4500
   },
   "result": {
-    "tag": "forge:wires/ivory_psimetal"
+    "tag": "c:wires/ivory_psimetal"
   },
   "cooling_time": 50
 }

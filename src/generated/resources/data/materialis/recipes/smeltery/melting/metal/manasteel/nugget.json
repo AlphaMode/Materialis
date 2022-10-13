@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:nuggets/manasteel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:nuggets/manasteel"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:nuggets/manasteel"
+    "tag": "c:nuggets/manasteel"
   },
   "result": {
     "fluid": "materialis:molten_manasteel",
-    "amount": 10
+    "amount": 1000
   },
   "temperature": 790,
   "time": 20

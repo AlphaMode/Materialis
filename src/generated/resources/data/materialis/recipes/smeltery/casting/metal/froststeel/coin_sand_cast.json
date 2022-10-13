@@ -1,12 +1,11 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:coins/froststeel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:coins/froststeel"
+      ]
     }
   ],
   "cast": {
@@ -14,11 +13,11 @@
   },
   "cast_consumed": true,
   "fluid": {
-    "tag": "forge:molten_froststeel",
-    "amount": 30
+    "tag": "c:molten_froststeel",
+    "amount": 3000
   },
   "result": {
-    "tag": "forge:coins/froststeel"
+    "tag": "c:coins/froststeel"
   },
   "cooling_time": 36
 }

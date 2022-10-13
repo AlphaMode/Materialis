@@ -1,90 +1,87 @@
 {
   "type": "forge:conditional",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:raw_materials/quicksilver",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:raw_materials/quicksilver"
+      ]
     }
   ],
   "recipes": [
     {
-      "conditions": [
+      "fabric:load_conditions": [
         {
-          "value": {
-            "tag": "forge:ingots/zinc",
-            "type": "forge:tag_empty"
-          },
-          "type": "forge:not"
+          "condition": "fabric:item_tags_populated",
+          "values": [
+            "c:ingots/zinc"
+          ]
         }
       ],
       "recipe": {
         "type": "tconstruct:ore_melting",
         "rate": "metal",
         "ingredient": {
-          "tag": "forge:raw_materials/quicksilver"
+          "tag": "c:raw_materials/quicksilver"
         },
         "result": {
           "fluid": "materialis:molten_quicksilver",
-          "amount": 90
+          "amount": 9000
         },
         "temperature": 400,
         "time": 69,
         "byproducts": [
           {
             "fluid": "tconstruct:molten_zinc",
-            "amount": 30
+            "amount": 3000
           }
         ]
       }
     },
     {
-      "conditions": [
+      "fabric:load_conditions": [
         {
-          "value": {
-            "tag": "forge:ingots/tin",
-            "type": "forge:tag_empty"
-          },
-          "type": "forge:not"
+          "condition": "fabric:item_tags_populated",
+          "values": [
+            "c:ingots/tin"
+          ]
         }
       ],
       "recipe": {
         "type": "tconstruct:ore_melting",
         "rate": "metal",
         "ingredient": {
-          "tag": "forge:raw_materials/quicksilver"
+          "tag": "c:raw_materials/quicksilver"
         },
         "result": {
           "fluid": "materialis:molten_quicksilver",
-          "amount": 90
+          "amount": 9000
         },
         "temperature": 400,
         "time": 69,
         "byproducts": [
           {
             "fluid": "tconstruct:molten_tin",
-            "amount": 30
+            "amount": 3000
           }
         ]
       }
     },
     {
-      "conditions": [
+      "fabric:load_conditions": [
         {
-          "type": "forge:true"
+          "condition": "porting_lib:true"
         }
       ],
       "recipe": {
         "type": "tconstruct:ore_melting",
         "rate": "metal",
         "ingredient": {
-          "tag": "forge:raw_materials/quicksilver"
+          "tag": "c:raw_materials/quicksilver"
         },
         "result": {
           "fluid": "materialis:molten_quicksilver",
-          "amount": 90
+          "amount": 9000
         },
         "temperature": 400,
         "time": 69

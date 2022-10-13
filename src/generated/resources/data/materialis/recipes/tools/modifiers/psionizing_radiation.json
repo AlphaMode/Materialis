@@ -1,26 +1,28 @@
 {
   "type": "tconstruct:modifier",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "modid": "psi",
-      "type": "forge:mod_loaded"
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "psi"
+      ]
     }
   ],
   "inputs": [
     {
-      "tag": "forge:ingots/psimetal"
+      "tag": "c:ingots/psimetal"
     },
     {
       "item": "psi:cad_socket_basic"
     },
     {
-      "tag": "forge:ingots/psimetal"
+      "tag": "c:ingots/psimetal"
     },
     {
-      "tag": "forge:gems/psigem"
+      "tag": "c:gems/psigem"
     },
     {
-      "tag": "forge:gems/psigem"
+      "tag": "c:gems/psigem"
     }
   ],
   "tools": {

@@ -1,12 +1,11 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/manasteel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/manasteel"
+      ]
     }
   ],
   "cast": {
@@ -14,11 +13,11 @@
   },
   "cast_consumed": true,
   "fluid": {
-    "tag": "forge:molten_manasteel",
-    "amount": 90
+    "tag": "c:molten_manasteel",
+    "amount": 9000
   },
   "result": {
-    "tag": "forge:ingots/manasteel"
+    "tag": "c:ingots/manasteel"
   },
   "cooling_time": 60
 }

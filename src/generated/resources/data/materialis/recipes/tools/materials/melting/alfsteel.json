@@ -1,15 +1,17 @@
 {
   "type": "tconstruct:material_melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "modid": "mythicbotany",
-      "type": "forge:mod_loaded"
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "mythicbotany"
+      ]
     }
   ],
   "input": "materialis:alfsteel",
   "temperature": 1440,
   "result": {
     "fluid": "materialis:molten_alfsteel",
-    "amount": 30
+    "amount": 3000
   }
 }

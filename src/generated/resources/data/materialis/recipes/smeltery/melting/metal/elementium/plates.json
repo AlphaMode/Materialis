@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:plates/elementium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:plates/elementium"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:plates/elementium"
+    "tag": "c:plates/elementium"
   },
   "result": {
     "fluid": "materialis:molten_elementium",
-    "amount": 90
+    "amount": 9000
   },
   "temperature": 1160,
   "time": 71

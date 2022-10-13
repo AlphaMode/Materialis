@@ -1,12 +1,11 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:gears/terrasteel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:gears/terrasteel"
+      ]
     }
   ],
   "cast": {
@@ -14,11 +13,11 @@
   },
   "cast_consumed": true,
   "fluid": {
-    "tag": "forge:molten_terrasteel",
-    "amount": 360
+    "tag": "c:molten_terrasteel",
+    "amount": 36000
   },
   "result": {
-    "tag": "forge:gears/terrasteel"
+    "tag": "c:gears/terrasteel"
   },
   "cooling_time": 149
 }

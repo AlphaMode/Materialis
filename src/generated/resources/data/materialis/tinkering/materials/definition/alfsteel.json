@@ -1,19 +1,22 @@
 {
   "condition": {
-    "values": [
+    "fabric:load_conditions": [
       {
-        "prop": "force_integration_materials",
-        "type": "tconstruct:config"
-      },
-      {
-        "value": {
-          "tag": "forge:ingots/alfsteel",
-          "type": "forge:tag_empty"
-        },
-        "type": "forge:not"
+        "condition": "fabric:or",
+        "values": [
+          {
+            "condition": "tconstruct:config",
+            "prop": "force_integration_materials"
+          },
+          {
+            "condition": "fabric:item_tags_populated",
+            "values": [
+              "c:ingots/alfsteel"
+            ]
+          }
+        ]
       }
-    ],
-    "type": "forge:or"
+    ]
   },
   "craftable": false,
   "tier": 4,

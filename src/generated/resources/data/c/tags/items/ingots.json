@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "#c:ingots/fairy",
+    "#c:ingots/refined_radiance",
+    "#c:ingots/shadow_steel",
+    "#c:ingots/starmetal",
+    "#c:ingots/pink_slime",
+    "#c:ingots/alfsteel",
+    "#c:ingots/flux_infused"
+  ]
+}

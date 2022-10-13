@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:swappable_modifier",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/elementium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/elementium"
+      ]
     }
   ],
   "inputs": [
     {
-      "tag": "forge:ingots/elementium"
+      "tag": "c:ingots/elementium"
     },
     {
-      "tag": "forge:ingots/elementium"
+      "tag": "c:ingots/elementium"
     },
     {
-      "tag": "forge:ingots/elementium"
+      "tag": "c:ingots/elementium"
     }
   ],
   "tools": [

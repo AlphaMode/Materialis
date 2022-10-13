@@ -1,21 +1,20 @@
 {
   "type": "tconstruct:material",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:storage_blocks/nickel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:storage_blocks/nickel"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:storage_blocks/nickel"
+    "tag": "c:storage_blocks/nickel"
   },
   "value": 9,
   "needed": 1,
   "material": "materialis:nickel",
   "leftover": {
-    "tag": "forge:ingots/nickel"
+    "tag": "c:ingots/nickel"
   }
 }

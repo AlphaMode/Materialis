@@ -1,20 +1,20 @@
 {
   "replace": false,
   "values": [
-    "#forge:storage_blocks/fairy",
+    "#c:storage_blocks/fairy",
     {
-      "id": "#forge:storage_blocks/ebony_psimetal",
+      "id": "#c:storage_blocks/ebony_psimetal",
       "required": false
     },
     {
-      "id": "#forge:storage_blocks/ivory_psimetal",
+      "id": "#c:storage_blocks/ivory_psimetal",
       "required": false
     },
     {
-      "id": "#forge:storage_blocks/terrasteel",
+      "id": "#c:storage_blocks/terrasteel",
       "required": false
     },
-    "#forge:storage_blocks/alfsteel",
-    "#forge:storage_blocks/flux_infused"
+    "#c:storage_blocks/alfsteel",
+    "#c:storage_blocks/flux_infused"
   ]
 }

@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:wires/regalium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:wires/regalium"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/wire"
   },
   "fluid": {
-    "tag": "forge:molten_regalium",
-    "amount": 45
+    "tag": "c:molten_regalium",
+    "amount": 4500
   },
   "result": {
-    "tag": "forge:wires/regalium"
+    "tag": "c:wires/regalium"
   },
   "cooling_time": 38
 }

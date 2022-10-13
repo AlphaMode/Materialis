@@ -1,41 +1,41 @@
 {
   "type": "tconstruct:ore_melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
+      "condition": "tconstruct:tag_difference_present",
       "registry": "minecraft:item",
-      "base": "forge:ores/elementium",
+      "base": "c:ores/elementium",
       "subtracted": [
-        "forge:ore_rates/sparse",
-        "forge:ore_rates/dense"
-      ],
-      "type": "tconstruct:tag_difference_present"
+        "c:ore_rates/sparse",
+        "c:ore_rates/dense"
+      ]
     }
   ],
   "rate": "metal",
   "ingredient": {
     "type": "forge:difference",
     "base": {
-      "tag": "forge:ores/elementium"
+      "tag": "c:ores/elementium"
     },
     "subtracted": [
       {
-        "tag": "forge:ore_rates/sparse"
+        "tag": "c:ore_rates/sparse"
       },
       {
-        "tag": "forge:ore_rates/dense"
+        "tag": "c:ore_rates/dense"
       }
     ]
   },
   "result": {
     "fluid": "materialis:molten_elementium",
-    "amount": 180
+    "amount": 18000
   },
   "temperature": 1160,
   "time": 177,
   "byproducts": [
     {
       "fluid": "tconstruct:molten_gold",
-      "amount": 60
+      "amount": 6000
     }
   ]
 }

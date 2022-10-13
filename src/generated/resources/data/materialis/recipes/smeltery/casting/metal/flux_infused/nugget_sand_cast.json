@@ -1,12 +1,11 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:nuggets/flux_infused",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:nuggets/flux_infused"
+      ]
     }
   ],
   "cast": {
@@ -14,11 +13,11 @@
   },
   "cast_consumed": true,
   "fluid": {
-    "tag": "forge:molten_flux_infused",
-    "amount": 10
+    "tag": "c:molten_flux_infused",
+    "amount": 1000
   },
   "result": {
-    "tag": "forge:nuggets/flux_infused"
+    "tag": "c:nuggets/flux_infused"
   },
   "cooling_time": 21
 }

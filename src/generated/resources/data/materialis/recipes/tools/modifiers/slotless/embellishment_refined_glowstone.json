@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:swappable_modifier",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/refined_glowstone",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/refined_glowstone"
+      ]
     }
   ],
   "inputs": [
     {
-      "tag": "forge:ingots/refined_glowstone"
+      "tag": "c:ingots/refined_glowstone"
     },
     {
-      "tag": "forge:ingots/refined_glowstone"
+      "tag": "c:ingots/refined_glowstone"
     },
     {
-      "tag": "forge:ingots/refined_glowstone"
+      "tag": "c:ingots/refined_glowstone"
     }
   ],
   "tools": [

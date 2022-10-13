@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:swappable_modifier",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/starmetal",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/starmetal"
+      ]
     }
   ],
   "inputs": [
     {
-      "tag": "forge:ingots/starmetal"
+      "tag": "c:ingots/starmetal"
     },
     {
-      "tag": "forge:ingots/starmetal"
+      "tag": "c:ingots/starmetal"
     },
     {
-      "tag": "forge:ingots/starmetal"
+      "tag": "c:ingots/starmetal"
     }
   ],
   "tools": [

@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:rods/forgotten_metal",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:rods/forgotten_metal"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/rod"
   },
   "fluid": {
-    "tag": "forge:molten_forgotten_metal",
-    "amount": 45
+    "tag": "c:molten_forgotten_metal",
+    "amount": 4500
   },
   "result": {
-    "tag": "forge:rods/forgotten_metal"
+    "tag": "c:rods/forgotten_metal"
   },
   "cooling_time": 52
 }

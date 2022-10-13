@@ -1,9 +1,11 @@
 {
   "type": "tconstruct:entity_melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "modid": "undergarden",
-      "type": "forge:mod_loaded"
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "undergarden"
+      ]
     }
   ],
   "entity": {
@@ -11,7 +13,7 @@
   },
   "result": {
     "fluid": "materialis:molten_utherium",
-    "amount": 1
+    "amount": 125
   },
   "damage": 2
 }

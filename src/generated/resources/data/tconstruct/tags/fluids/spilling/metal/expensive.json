@@ -1,16 +1,16 @@
 {
   "replace": false,
   "values": [
-    "#forge:molten_refined_radiance",
-    "#forge:molten_shadow_steel",
-    "#forge:molten_neptunium",
-    "#forge:molten_forgotten_metal",
-    "#forge:molten_ebony_psimetal",
-    "#forge:molten_ivory_psimetal",
-    "#forge:molten_elementium",
-    "#forge:molten_terrasteel",
-    "#forge:molten_alfsteel",
-    "#forge:molten_draconium",
-    "#forge:molten_draconium_awakened"
+    "#c:molten_refined_radiance",
+    "#c:molten_shadow_steel",
+    "#c:molten_neptunium",
+    "#c:molten_forgotten_metal",
+    "#c:molten_ebony_psimetal",
+    "#c:molten_ivory_psimetal",
+    "#c:molten_elementium",
+    "#c:molten_terrasteel",
+    "#c:molten_alfsteel",
+    "#c:molten_draconium",
+    "#c:molten_draconium_awakened"
   ]
 }

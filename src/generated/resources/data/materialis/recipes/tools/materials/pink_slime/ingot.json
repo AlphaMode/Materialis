@@ -1,16 +1,15 @@
 {
   "type": "tconstruct:material",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/pink_slime",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/pink_slime"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:ingots/pink_slime"
+    "tag": "c:ingots/pink_slime"
   },
   "value": 1,
   "needed": 1,

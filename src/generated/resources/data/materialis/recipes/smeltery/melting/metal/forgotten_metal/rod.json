@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:rods/forgotten_metal",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:rods/forgotten_metal"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:rods/forgotten_metal"
+    "tag": "c:rods/forgotten_metal"
   },
   "result": {
     "fluid": "materialis:molten_forgotten_metal",
-    "amount": 45
+    "amount": 4500
   },
   "temperature": 1230,
   "time": 15

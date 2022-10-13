@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:swappable_modifier",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/draconium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/draconium"
+      ]
     }
   ],
   "inputs": [
     {
-      "tag": "forge:ingots/draconium"
+      "tag": "c:ingots/draconium"
     },
     {
-      "tag": "forge:ingots/draconium"
+      "tag": "c:ingots/draconium"
     },
     {
-      "tag": "forge:ingots/draconium"
+      "tag": "c:ingots/draconium"
     }
   ],
   "tools": [

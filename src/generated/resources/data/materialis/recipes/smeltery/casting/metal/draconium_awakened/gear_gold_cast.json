@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:gears/draconium_awakened",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:gears/draconium_awakened"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/gear"
   },
   "fluid": {
-    "tag": "forge:molten_draconium_awakened",
-    "amount": 360
+    "tag": "c:molten_draconium_awakened",
+    "amount": 36000
   },
   "result": {
-    "tag": "forge:gears/draconium_awakened"
+    "tag": "c:gears/draconium_awakened"
   },
   "cooling_time": 159
 }

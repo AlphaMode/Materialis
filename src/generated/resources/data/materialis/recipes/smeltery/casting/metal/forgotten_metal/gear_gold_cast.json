@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:gears/forgotten_metal",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:gears/forgotten_metal"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/gear"
   },
   "fluid": {
-    "tag": "forge:molten_forgotten_metal",
-    "amount": 360
+    "tag": "c:molten_forgotten_metal",
+    "amount": 36000
   },
   "result": {
-    "tag": "forge:gears/forgotten_metal"
+    "tag": "c:gears/forgotten_metal"
   },
   "cooling_time": 146
 }

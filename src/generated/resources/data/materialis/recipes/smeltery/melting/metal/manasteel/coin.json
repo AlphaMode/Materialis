@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:coins/manasteel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:coins/manasteel"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:coins/manasteel"
+    "tag": "c:coins/manasteel"
   },
   "result": {
     "fluid": "materialis:molten_manasteel",
-    "amount": 30
+    "amount": 3000
   },
   "temperature": 790,
   "time": 40

@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/neptunium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/neptunium"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/ingot"
   },
   "fluid": {
-    "tag": "forge:molten_neptunium",
-    "amount": 90
+    "tag": "c:molten_neptunium",
+    "amount": 9000
   },
   "result": {
-    "tag": "forge:ingots/neptunium"
+    "tag": "c:ingots/neptunium"
   },
   "cooling_time": 78
 }

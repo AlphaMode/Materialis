@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:coins/shadow_steel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:coins/shadow_steel"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:coins/shadow_steel"
+    "tag": "c:coins/shadow_steel"
   },
   "result": {
     "fluid": "materialis:molten_shadow_steel",
-    "amount": 30
+    "amount": 3000
   },
   "temperature": 1300,
   "time": 50

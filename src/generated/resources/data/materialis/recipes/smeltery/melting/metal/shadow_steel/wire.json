@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:wires/shadow_steel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:wires/shadow_steel"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:wires/shadow_steel"
+    "tag": "c:wires/shadow_steel"
   },
   "result": {
     "fluid": "materialis:molten_shadow_steel",
-    "amount": 45
+    "amount": 4500
   },
   "temperature": 1300,
   "time": 15

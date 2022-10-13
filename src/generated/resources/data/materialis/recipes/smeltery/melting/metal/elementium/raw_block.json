@@ -1,28 +1,27 @@
 {
   "type": "tconstruct:ore_melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:storage_blocks/raw_elementium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:storage_blocks/raw_elementium"
+      ]
     }
   ],
   "rate": "metal",
   "ingredient": {
-    "tag": "forge:storage_blocks/raw_elementium"
+    "tag": "c:storage_blocks/raw_elementium"
   },
   "result": {
     "fluid": "materialis:molten_elementium",
-    "amount": 810
+    "amount": 81000
   },
   "temperature": 1160,
   "time": 426,
   "byproducts": [
     {
       "fluid": "tconstruct:molten_gold",
-      "amount": 270
+      "amount": 27000
     }
   ]
 }

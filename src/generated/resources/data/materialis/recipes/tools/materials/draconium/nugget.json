@@ -1,16 +1,15 @@
 {
   "type": "tconstruct:material",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:nuggets/draconium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:nuggets/draconium"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:nuggets/draconium"
+    "tag": "c:nuggets/draconium"
   },
   "value": 1,
   "needed": 9,

@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:plates/cloggrum",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:plates/cloggrum"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/plate"
   },
   "fluid": {
-    "tag": "forge:molten_cloggrum",
-    "amount": 90
+    "tag": "c:molten_cloggrum",
+    "amount": 9000
   },
   "result": {
-    "tag": "forge:plates/cloggrum"
+    "tag": "c:plates/cloggrum"
   },
   "cooling_time": 55
 }

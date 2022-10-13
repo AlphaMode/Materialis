@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:plates/refined_radiance",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:plates/refined_radiance"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/plate"
   },
   "fluid": {
-    "tag": "forge:molten_refined_radiance",
-    "amount": 90
+    "tag": "c:molten_refined_radiance",
+    "amount": 9000
   },
   "result": {
-    "tag": "forge:plates/refined_radiance"
+    "tag": "c:plates/refined_radiance"
   },
   "cooling_time": 75
 }

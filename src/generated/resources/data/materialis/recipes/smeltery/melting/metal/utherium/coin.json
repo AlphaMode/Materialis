@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:coins/utherium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:coins/utherium"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:coins/utherium"
+    "tag": "c:coins/utherium"
   },
   "result": {
     "fluid": "materialis:molten_utherium",
-    "amount": 30
+    "amount": 3000
   },
   "temperature": 1070,
   "time": 46

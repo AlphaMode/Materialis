@@ -1,12 +1,11 @@
 {
   "type": "tconstruct:material",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "materialis:plastic_material",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "materialis:plastic_material"
+      ]
     }
   ],
   "ingredient": {

@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:nuggets/starmetal",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:nuggets/starmetal"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/nugget"
   },
   "fluid": {
-    "tag": "forge:molten_starmetal",
-    "amount": 10
+    "tag": "c:molten_starmetal",
+    "amount": 1000
   },
   "result": {
-    "tag": "forge:nuggets/starmetal"
+    "tag": "c:nuggets/starmetal"
   },
   "cooling_time": 20
 }

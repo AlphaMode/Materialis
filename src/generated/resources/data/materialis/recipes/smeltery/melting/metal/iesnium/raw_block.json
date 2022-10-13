@@ -1,60 +1,58 @@
 {
   "type": "forge:conditional",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:storage_blocks/raw_iesnium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:storage_blocks/raw_iesnium"
+      ]
     }
   ],
   "recipes": [
     {
-      "conditions": [
+      "fabric:load_conditions": [
         {
-          "value": {
-            "tag": "forge:ingots/silver",
-            "type": "forge:tag_empty"
-          },
-          "type": "forge:not"
+          "condition": "fabric:item_tags_populated",
+          "values": [
+            "c:ingots/silver"
+          ]
         }
       ],
       "recipe": {
         "type": "tconstruct:ore_melting",
         "rate": "metal",
         "ingredient": {
-          "tag": "forge:storage_blocks/raw_iesnium"
+          "tag": "c:storage_blocks/raw_iesnium"
         },
         "result": {
           "fluid": "materialis:molten_iesnium",
-          "amount": 810
+          "amount": 81000
         },
         "temperature": 1090,
         "time": 414,
         "byproducts": [
           {
             "fluid": "tconstruct:molten_silver",
-            "amount": 270
+            "amount": 27000
           }
         ]
       }
     },
     {
-      "conditions": [
+      "fabric:load_conditions": [
         {
-          "type": "forge:true"
+          "condition": "porting_lib:true"
         }
       ],
       "recipe": {
         "type": "tconstruct:ore_melting",
         "rate": "metal",
         "ingredient": {
-          "tag": "forge:storage_blocks/raw_iesnium"
+          "tag": "c:storage_blocks/raw_iesnium"
         },
         "result": {
           "fluid": "materialis:molten_iesnium",
-          "amount": 810
+          "amount": 81000
         },
         "temperature": 1090,
         "time": 414

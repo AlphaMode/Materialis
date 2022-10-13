@@ -1,12 +1,11 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:gears/starmetal",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:gears/starmetal"
+      ]
     }
   ],
   "cast": {
@@ -14,11 +13,11 @@
   },
   "cast_consumed": true,
   "fluid": {
-    "tag": "forge:molten_starmetal",
-    "amount": 360
+    "tag": "c:molten_starmetal",
+    "amount": 36000
   },
   "result": {
-    "tag": "forge:gears/starmetal"
+    "tag": "c:gears/starmetal"
   },
   "cooling_time": 117
 }

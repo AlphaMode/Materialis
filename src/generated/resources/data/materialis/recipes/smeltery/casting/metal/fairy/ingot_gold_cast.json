@@ -5,7 +5,7 @@
   },
   "fluid": {
     "tag": "materialis:molten_fairy",
-    "amount": 90
+    "amount": 9000
   },
   "result": "materialis:fairy_ingot",
   "cooling_time": 59

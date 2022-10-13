@@ -1,21 +1,25 @@
 {
   "type": "tconstruct:damagable_melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
+      "condition": "fabric:and",
       "values": [
         {
-          "modid": "psi",
-          "type": "forge:mod_loaded"
+          "condition": "fabric:all_mods_loaded",
+          "values": [
+            "psi"
+          ]
         },
         {
+          "condition": "fabric:not",
           "value": {
-            "modid": "magipsi",
-            "type": "forge:mod_loaded"
-          },
-          "type": "forge:not"
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+              "magipsi"
+            ]
+          }
         }
-      ],
-      "type": "forge:and"
+      ]
     }
   ],
   "ingredient": {
@@ -23,14 +27,16 @@
   },
   "result": {
     "fluid": "materialis:molten_psimetal",
-    "amount": 90
+    "amount": 9000,
+    "unit_size": 1000
   },
   "temperature": 750,
   "time": 59,
   "byproducts": [
     {
       "fluid": "tconstruct:molten_iron",
-      "amount": 90
+      "amount": 9000,
+      "unit_size": 1000
     }
   ]
 }

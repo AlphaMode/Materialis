@@ -1,20 +1,22 @@
 {
   "type": "tconstruct:modifier",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "modid": "thermal",
-      "type": "forge:mod_loaded"
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "thermal"
+      ]
     }
   ],
   "inputs": [
     {
-      "tag": "forge:gears/nickel"
+      "tag": "c:gears/nickel"
     },
     {
       "item": "thermal:wrench"
     },
     {
-      "tag": "forge:gears/nickel"
+      "tag": "c:gears/nickel"
     }
   ],
   "tools": {

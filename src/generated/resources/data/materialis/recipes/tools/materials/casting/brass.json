@@ -2,7 +2,7 @@
   "type": "tconstruct:material_fluid",
   "fluid": {
     "tag": "tconstruct:molten_brass",
-    "amount": 90
+    "amount": 9000
   },
   "temperature": 605,
   "output": "materialis:brass"

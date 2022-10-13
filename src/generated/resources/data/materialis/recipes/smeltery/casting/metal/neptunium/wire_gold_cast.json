@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:wires/neptunium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:wires/neptunium"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/wire"
   },
   "fluid": {
-    "tag": "forge:molten_neptunium",
-    "amount": 45
+    "tag": "c:molten_neptunium",
+    "amount": 4500
   },
   "result": {
-    "tag": "forge:wires/neptunium"
+    "tag": "c:wires/neptunium"
   },
   "cooling_time": 55
 }

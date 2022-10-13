@@ -1,9 +1,11 @@
 {
   "type": "tconstruct:damagable_melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "modid": "occultism",
-      "type": "forge:mod_loaded"
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "occultism"
+      ]
     }
   ],
   "ingredient": {
@@ -11,7 +13,8 @@
   },
   "result": {
     "fluid": "materialis:molten_iesnium",
-    "amount": 270
+    "amount": 27000,
+    "unit_size": 1000
   },
   "temperature": 1090,
   "time": 119

@@ -1,22 +1,21 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:inlays",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:inlays"
+      ]
     }
   ],
   "cast": {
-    "tag": "forge:inlays"
+    "tag": "c:inlays"
   },
   "cast_consumed": true,
   "switch_slots": true,
   "fluid": {
-    "tag": "forge:molten_gold",
-    "amount": 90
+    "tag": "c:molten_gold",
+    "amount": 9000
   },
   "result": "materialis:inlay_cast",
   "cooling_time": 57

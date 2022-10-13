@@ -1,16 +1,15 @@
 {
   "type": "tconstruct:material",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/ebony_psimetal",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/ebony_psimetal"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:ingots/ebony_psimetal"
+    "tag": "c:ingots/ebony_psimetal"
   },
   "value": 1,
   "needed": 1,

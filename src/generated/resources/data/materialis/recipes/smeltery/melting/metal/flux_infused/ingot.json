@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:ingots/flux_infused",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:ingots/flux_infused"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:ingots/flux_infused"
+    "tag": "c:ingots/flux_infused"
   },
   "result": {
     "fluid": "materialis:molten_flux_infused",
-    "amount": 90
+    "amount": 9000
   },
   "temperature": 880,
   "time": 63

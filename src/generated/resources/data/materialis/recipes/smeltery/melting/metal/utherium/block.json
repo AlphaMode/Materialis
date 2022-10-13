@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:storage_blocks/utherium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:storage_blocks/utherium"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:storage_blocks/utherium"
+    "tag": "c:storage_blocks/utherium"
   },
   "result": {
     "fluid": "materialis:molten_utherium",
-    "amount": 810
+    "amount": 81000
   },
   "temperature": 1070,
   "time": 205

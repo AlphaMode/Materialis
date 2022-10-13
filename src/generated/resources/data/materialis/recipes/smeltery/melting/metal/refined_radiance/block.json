@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:storage_blocks/refined_radiance",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:storage_blocks/refined_radiance"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:storage_blocks/refined_radiance"
+    "tag": "c:storage_blocks/refined_radiance"
   },
   "result": {
     "fluid": "materialis:molten_refined_radiance",
-    "amount": 810
+    "amount": 81000
   },
   "temperature": 1300,
   "time": 225

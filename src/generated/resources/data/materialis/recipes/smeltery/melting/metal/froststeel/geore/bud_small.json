@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:geore_small_buds/froststeel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:geore_small_buds/froststeel"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:geore_small_buds/froststeel"
+    "tag": "c:geore_small_buds/froststeel"
   },
   "result": {
     "fluid": "materialis:molten_froststeel",
-    "amount": 90
+    "amount": 9000
   },
   "temperature": 860,
   "time": 62

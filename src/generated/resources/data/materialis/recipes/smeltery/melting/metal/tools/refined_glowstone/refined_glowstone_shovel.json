@@ -1,9 +1,11 @@
 {
   "type": "tconstruct:damagable_melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "modid": "mekanismtools",
-      "type": "forge:mod_loaded"
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "mekanismtools"
+      ]
     }
   ],
   "ingredient": {
@@ -11,7 +13,8 @@
   },
   "result": {
     "fluid": "tconstruct:molten_refined_glowstone",
-    "amount": 90
+    "amount": 9000,
+    "unit_size": 1000
   },
   "temperature": 825,
   "time": 61

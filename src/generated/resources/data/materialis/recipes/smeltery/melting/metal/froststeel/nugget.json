@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:nuggets/froststeel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:nuggets/froststeel"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:nuggets/froststeel"
+    "tag": "c:nuggets/froststeel"
   },
   "result": {
     "fluid": "materialis:molten_froststeel",
-    "amount": 10
+    "amount": 1000
   },
   "temperature": 860,
   "time": 21

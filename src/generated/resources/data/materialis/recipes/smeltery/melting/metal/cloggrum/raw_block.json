@@ -1,28 +1,27 @@
 {
   "type": "tconstruct:ore_melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:storage_blocks/raw_cloggrum",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:storage_blocks/raw_cloggrum"
+      ]
     }
   ],
   "rate": "metal",
   "ingredient": {
-    "tag": "forge:storage_blocks/raw_cloggrum"
+    "tag": "c:storage_blocks/raw_cloggrum"
   },
   "result": {
     "fluid": "materialis:molten_cloggrum",
-    "amount": 810
+    "amount": 81000
   },
   "temperature": 650,
   "time": 331,
   "byproducts": [
     {
       "fluid": "materialis:molten_froststeel",
-      "amount": 270
+      "amount": 27000
     }
   ]
 }

@@ -1,13 +1,13 @@
 {
   "type": "tconstruct:ore_melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
+      "condition": "tconstruct:tag_intersection_present",
       "registry": "minecraft:item",
       "tags": [
-        "forge:ores/regalium",
-        "forge:ore_rates/sparse"
-      ],
-      "type": "tconstruct:tag_intersection_present"
+        "c:ores/regalium",
+        "c:ore_rates/sparse"
+      ]
     }
   ],
   "rate": "metal",
@@ -15,23 +15,23 @@
     "type": "forge:intersection",
     "children": [
       {
-        "tag": "forge:ores/regalium"
+        "tag": "c:ores/regalium"
       },
       {
-        "tag": "forge:ore_rates/sparse"
+        "tag": "c:ore_rates/sparse"
       }
     ]
   },
   "result": {
     "fluid": "materialis:molten_regalium",
-    "amount": 90
+    "amount": 9000
   },
   "temperature": 620,
   "time": 81,
   "byproducts": [
     {
       "fluid": "materialis:molten_cloggrum",
-      "amount": 30
+      "amount": 3000
     }
   ]
 }

@@ -1,16 +1,15 @@
 {
   "type": "tconstruct:material",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:nuggets/nickel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:nuggets/nickel"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:nuggets/nickel"
+    "tag": "c:nuggets/nickel"
   },
   "value": 1,
   "needed": 9,

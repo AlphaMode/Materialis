@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:rods/neptunium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:rods/neptunium"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:rods/neptunium"
+    "tag": "c:rods/neptunium"
   },
   "result": {
     "fluid": "materialis:molten_neptunium",
-    "amount": 45
+    "amount": 4500
   },
   "temperature": 1400,
   "time": 16

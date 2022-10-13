@@ -1,9 +1,9 @@
 {
   "replace": false,
   "values": [
-    "#forge:molten_arcane_gold",
-    "#forge:molten_starmetal",
-    "#forge:molten_pink_slime",
-    "#forge:molten_psimetal"
+    "#c:molten_arcane_gold",
+    "#c:molten_starmetal",
+    "#c:molten_pink_slime",
+    "#c:molten_psimetal"
   ]
 }

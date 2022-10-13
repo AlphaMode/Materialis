@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:coins/forgotten_metal",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:coins/forgotten_metal"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/coin"
   },
   "fluid": {
-    "tag": "forge:molten_forgotten_metal",
-    "amount": 30
+    "tag": "c:molten_forgotten_metal",
+    "amount": 3000
   },
   "result": {
-    "tag": "forge:coins/forgotten_metal"
+    "tag": "c:coins/forgotten_metal"
   },
   "cooling_time": 42
 }

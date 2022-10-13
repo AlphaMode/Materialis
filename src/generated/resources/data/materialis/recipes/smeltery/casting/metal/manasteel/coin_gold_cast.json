@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:coins/manasteel",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:coins/manasteel"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/coin"
   },
   "fluid": {
-    "tag": "forge:molten_manasteel",
-    "amount": 30
+    "tag": "c:molten_manasteel",
+    "amount": 3000
   },
   "result": {
-    "tag": "forge:coins/manasteel"
+    "tag": "c:coins/manasteel"
   },
   "cooling_time": 35
 }

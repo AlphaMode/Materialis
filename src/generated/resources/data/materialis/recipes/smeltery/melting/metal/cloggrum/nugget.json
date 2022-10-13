@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:nuggets/cloggrum",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:nuggets/cloggrum"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:nuggets/cloggrum"
+    "tag": "c:nuggets/cloggrum"
   },
   "result": {
     "fluid": "materialis:molten_cloggrum",
-    "amount": 10
+    "amount": 1000
   },
   "temperature": 650,
   "time": 18

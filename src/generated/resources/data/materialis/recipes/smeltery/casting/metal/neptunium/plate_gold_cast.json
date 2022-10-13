@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:plates/neptunium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:plates/neptunium"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/plate"
   },
   "fluid": {
-    "tag": "forge:molten_neptunium",
-    "amount": 90
+    "tag": "c:molten_neptunium",
+    "amount": 9000
   },
   "result": {
-    "tag": "forge:plates/neptunium"
+    "tag": "c:plates/neptunium"
   },
   "cooling_time": 78
 }

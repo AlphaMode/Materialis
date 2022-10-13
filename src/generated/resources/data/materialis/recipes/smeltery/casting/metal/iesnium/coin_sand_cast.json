@@ -1,12 +1,11 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:coins/iesnium",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:coins/iesnium"
+      ]
     }
   ],
   "cast": {
@@ -14,11 +13,11 @@
   },
   "cast_consumed": true,
   "fluid": {
-    "tag": "forge:molten_iesnium",
-    "amount": 30
+    "tag": "c:molten_iesnium",
+    "amount": 3000
   },
   "result": {
-    "tag": "forge:coins/iesnium"
+    "tag": "c:coins/iesnium"
   },
   "cooling_time": 40
 }

@@ -1,20 +1,19 @@
 {
   "type": "tconstruct:melting",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:storage_blocks/ebony_psimetal",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:storage_blocks/ebony_psimetal"
+      ]
     }
   ],
   "ingredient": {
-    "tag": "forge:storage_blocks/ebony_psimetal"
+    "tag": "c:storage_blocks/ebony_psimetal"
   },
   "result": {
     "fluid": "materialis:molten_ebony_psimetal",
-    "amount": 810
+    "amount": 81000
   },
   "temperature": 1130,
   "time": 210

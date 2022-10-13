@@ -1,23 +1,22 @@
 {
   "type": "tconstruct:casting_table",
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "value": {
-        "tag": "forge:gears/ebony_psimetal",
-        "type": "forge:tag_empty"
-      },
-      "type": "forge:not"
+      "condition": "fabric:item_tags_populated",
+      "values": [
+        "c:gears/ebony_psimetal"
+      ]
     }
   ],
   "cast": {
     "tag": "tconstruct:casts/multi_use/gear"
   },
   "fluid": {
-    "tag": "forge:molten_ebony_psimetal",
-    "amount": 360
+    "tag": "c:molten_ebony_psimetal",
+    "amount": 36000
   },
   "result": {
-    "tag": "forge:gears/ebony_psimetal"
+    "tag": "c:gears/ebony_psimetal"
   },
   "cooling_time": 140
 }
